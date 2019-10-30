@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,12 +14,12 @@
 		89F03D8B2369E823003E10E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F03D8A2369E823003E10E3 /* Assets.xcassets */; };
 		89F03D8E2369E823003E10E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */; };
 		89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D962369E9D4003E10E3 /* CDUtility.swift */; };
-		89F03D9A2369EADB003E10E3 /* CoreDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D992369EADB003E10E3 /* CoreDataEntity.swift */; };
+		89F03D9A2369EADB003E10E3 /* UpdatableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D992369EADB003E10E3 /* UpdatableEntity.swift */; };
 		89F03DC62369EE23003E10E3 /* SearchHandlerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D9F2369EE23003E10E3 /* SearchHandlerDataSource.swift */; };
 		89F03DCC2369EE23003E10E3 /* SOSearchViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DA72369EE23003E10E3 /* SOSearchViewManager.swift */; };
 		89F03DCD2369EE23003E10E3 /* SOFiltarableSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DA82369EE23003E10E3 /* SOFiltarableSearchList.swift */; };
 		89F03DCF2369EE23003E10E3 /* SOSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DAB2369EE23003E10E3 /* SOSearchView.swift */; };
-		89F03DD22369EE23003E10E3 /* PersonSelectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */; };
+		89F03DD22369EE23003E10E3 /* ArtistSearchViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DAF2369EE23003E10E3 /* ArtistSearchViewData.swift */; };
 		89F03DD32369EE23003E10E3 /* SOSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DB02369EE23003E10E3 /* SOSearchData.swift */; };
 		89F03DE12369EE23003E10E3 /* ShowableObjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DBF2369EE23003E10E3 /* ShowableObjectSearchController.swift */; };
 		89F03DE22369EE23003E10E3 /* SearchRowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC12369EE23003E10E3 /* SearchRowAction.swift */; };
@@ -36,6 +36,9 @@
 		89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */; };
 		89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */; };
 		89F03E052369F6BE003E10E3 /* ButtonActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E022369F6BE003E10E3 /* ButtonActionView.swift */; };
+		89F03E09236A1281003E10E3 /* ProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E08236A1281003E10E3 /* ProgressLoader.swift */; };
+		89F03E0B236A12D0003E10E3 /* AFAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E0A236A12D0003E10E3 /* AFAlbum.swift */; };
+		89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E0C236A12D8003E10E3 /* AFArtist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +52,12 @@
 		89F03D8D2369E823003E10E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89F03D8F2369E823003E10E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89F03D962369E9D4003E10E3 /* CDUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUtility.swift; sourceTree = "<group>"; };
-		89F03D992369EADB003E10E3 /* CoreDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEntity.swift; sourceTree = "<group>"; };
+		89F03D992369EADB003E10E3 /* UpdatableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableEntity.swift; sourceTree = "<group>"; };
 		89F03D9F2369EE23003E10E3 /* SearchHandlerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHandlerDataSource.swift; sourceTree = "<group>"; };
 		89F03DA72369EE23003E10E3 /* SOSearchViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchViewManager.swift; sourceTree = "<group>"; };
 		89F03DA82369EE23003E10E3 /* SOFiltarableSearchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOFiltarableSearchList.swift; sourceTree = "<group>"; };
 		89F03DAB2369EE23003E10E3 /* SOSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchView.swift; sourceTree = "<group>"; };
-		89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewData.swift; sourceTree = "<group>"; };
+		89F03DAF2369EE23003E10E3 /* ArtistSearchViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewData.swift; sourceTree = "<group>"; };
 		89F03DB02369EE23003E10E3 /* SOSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchData.swift; sourceTree = "<group>"; };
 		89F03DBF2369EE23003E10E3 /* ShowableObjectSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchController.swift; sourceTree = "<group>"; };
 		89F03DC12369EE23003E10E3 /* SearchRowAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRowAction.swift; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 		89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizesExtensions.swift; sourceTree = "<group>"; };
 		89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledSwitch.swift; sourceTree = "<group>"; };
 		89F03E022369F6BE003E10E3 /* ButtonActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonActionView.swift; sourceTree = "<group>"; };
+		89F03E08236A1281003E10E3 /* ProgressLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLoader.swift; sourceTree = "<group>"; };
+		89F03E0A236A12D0003E10E3 /* AFAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbum.swift; sourceTree = "<group>"; };
+		89F03E0C236A12D8003E10E3 /* AFArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFArtist.swift; sourceTree = "<group>"; };
 		9E327B47EFEF6C163BD0E4BA /* Pods-AFMusicPlaylist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMusicPlaylist.release.xcconfig"; path = "Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,10 +121,11 @@
 		89F03D7D2369E821003E10E3 /* AFMusicPlaylist */ = {
 			isa = PBXGroup;
 			children = (
+				89F03E0E236A12E8003E10E3 /* Model */,
 				89F03D822369E821003E10E3 /* ViewController.swift */,
-				89F03E072369FE5F003E10E3 /* SystemFiles */,
 				89F03D982369EACD003E10E3 /* CoreDataModels */,
 				89F03D952369E9C8003E10E3 /* Utility */,
+				89F03E072369FE5F003E10E3 /* SystemFiles */,
 			);
 			path = AFMusicPlaylist;
 			sourceTree = "<group>";
@@ -130,7 +137,6 @@
 				89F03DF52369F5B0003E10E3 /* Extensions */,
 				89F03DE72369EE99003E10E3 /* CommonVC */,
 				89F03D9D2369EE23003E10E3 /* ShowableObjectSearchController */,
-				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -139,7 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
-				89F03D992369EADB003E10E3 /* CoreDataEntity.swift */,
+				89F03D992369EADB003E10E3 /* UpdatableEntity.swift */,
+				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -188,7 +195,7 @@
 		89F03DAC2369EE23003E10E3 /* SearchData */ = {
 			isa = PBXGroup;
 			children = (
-				89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */,
+				89F03DAF2369EE23003E10E3 /* ArtistSearchViewData.swift */,
 			);
 			path = SearchData;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 		89F03E062369F6C1003E10E3 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				89F03E08236A1281003E10E3 /* ProgressLoader.swift */,
 				89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */,
 				89F03E022369F6BE003E10E3 /* ButtonActionView.swift */,
 			);
@@ -243,6 +251,15 @@
 				89F03D7E2369E821003E10E3 /* AppDelegate.swift */,
 			);
 			path = SystemFiles;
+			sourceTree = "<group>";
+		};
+		89F03E0E236A12E8003E10E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89F03E0A236A12D0003E10E3 /* AFAlbum.swift */,
+				89F03E0C236A12D8003E10E3 /* AFArtist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A0AEB3C3FD97B4A39DB890EF /* Pods */ = {
@@ -378,20 +395,23 @@
 				89F03DE12369EE23003E10E3 /* ShowableObjectSearchController.swift in Sources */,
 				89F03DFD2369F5CF003E10E3 /* SwiftExtensions.swift in Sources */,
 				89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */,
+				89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */,
 				89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */,
 				89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */,
 				89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */,
 				89F03DCC2369EE23003E10E3 /* SOSearchViewManager.swift in Sources */,
 				89F03DC62369EE23003E10E3 /* SearchHandlerDataSource.swift in Sources */,
 				89F03E052369F6BE003E10E3 /* ButtonActionView.swift in Sources */,
+				89F03E0B236A12D0003E10E3 /* AFAlbum.swift in Sources */,
 				89F03DE42369EE23003E10E3 /* ShowableObjectSearchCell.swift in Sources */,
-				89F03D9A2369EADB003E10E3 /* CoreDataEntity.swift in Sources */,
+				89F03D9A2369EADB003E10E3 /* UpdatableEntity.swift in Sources */,
 				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
 				89F03DCD2369EE23003E10E3 /* SOFiltarableSearchList.swift in Sources */,
 				89F03DD32369EE23003E10E3 /* SOSearchData.swift in Sources */,
 				89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */,
 				89F03DE22369EE23003E10E3 /* SearchRowAction.swift in Sources */,
-				89F03DD22369EE23003E10E3 /* PersonSelectionViewData.swift in Sources */,
+				89F03DD22369EE23003E10E3 /* ArtistSearchViewData.swift in Sources */,
+				89F03E09236A1281003E10E3 /* ProgressLoader.swift in Sources */,
 				89F03DE62369EE23003E10E3 /* Array+FilteredSearch.swift in Sources */,
 				89F03DE52369EE23003E10E3 /* ButtonCell.swift in Sources */,
 			);
@@ -531,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AFMusicPlaylist/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AFMusicPlaylist/SystemFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AFMusicPlaylist/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AFMusicPlaylist/SystemFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
