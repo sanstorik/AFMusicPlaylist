@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3ABB4DE770C19C8A12D29D /* Pods_AFMusicPlaylist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */; };
 		89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D7E2369E821003E10E3 /* AppDelegate.swift */; };
 		89F03D832369E821003E10E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D822369E821003E10E3 /* ViewController.swift */; };
 		89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47A9B140637119053B270362 /* Pods-AFMusicPlaylist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMusicPlaylist.debug.xcconfig"; path = "Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist.debug.xcconfig"; sourceTree = "<group>"; };
+		6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFMusicPlaylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F03D7B2369E821003E10E3 /* AFMusicPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMusicPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F03D7E2369E821003E10E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89F03D822369E821003E10E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizesExtensions.swift; sourceTree = "<group>"; };
 		89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledSwitch.swift; sourceTree = "<group>"; };
 		89F03E022369F6BE003E10E3 /* ButtonActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonActionView.swift; sourceTree = "<group>"; };
+		9E327B47EFEF6C163BD0E4BA /* Pods-AFMusicPlaylist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMusicPlaylist.release.xcconfig"; path = "Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,17 +79,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3ABB4DE770C19C8A12D29D /* Pods_AFMusicPlaylist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		658413D9F58C0B56D1B434E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89F03D722369E821003E10E3 = {
 			isa = PBXGroup;
 			children = (
 				89F03D7D2369E821003E10E3 /* AFMusicPlaylist */,
 				89F03D7C2369E821003E10E3 /* Products */,
+				A0AEB3C3FD97B4A39DB890EF /* Pods */,
+				658413D9F58C0B56D1B434E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,14 +115,10 @@
 		89F03D7D2369E821003E10E3 /* AFMusicPlaylist */ = {
 			isa = PBXGroup;
 			children = (
+				89F03D822369E821003E10E3 /* ViewController.swift */,
+				89F03E072369FE5F003E10E3 /* SystemFiles */,
 				89F03D982369EACD003E10E3 /* CoreDataModels */,
 				89F03D952369E9C8003E10E3 /* Utility */,
-				89F03D7E2369E821003E10E3 /* AppDelegate.swift */,
-				89F03D822369E821003E10E3 /* ViewController.swift */,
-				89F03D8A2369E823003E10E3 /* Assets.xcassets */,
-				89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */,
-				89F03D8F2369E823003E10E3 /* Info.plist */,
-				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
 			);
 			path = AFMusicPlaylist;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 		89F03D982369EACD003E10E3 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
 				89F03D992369EADB003E10E3 /* CoreDataEntity.swift */,
 			);
 			path = CoreDataModels;
@@ -222,6 +234,26 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		89F03E072369FE5F003E10E3 /* SystemFiles */ = {
+			isa = PBXGroup;
+			children = (
+				89F03D8A2369E823003E10E3 /* Assets.xcassets */,
+				89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */,
+				89F03D8F2369E823003E10E3 /* Info.plist */,
+				89F03D7E2369E821003E10E3 /* AppDelegate.swift */,
+			);
+			path = SystemFiles;
+			sourceTree = "<group>";
+		};
+		A0AEB3C3FD97B4A39DB890EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47A9B140637119053B270362 /* Pods-AFMusicPlaylist.debug.xcconfig */,
+				9E327B47EFEF6C163BD0E4BA /* Pods-AFMusicPlaylist.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89F03D922369E823003E10E3 /* Build configuration list for PBXNativeTarget "AFMusicPlaylist" */;
 			buildPhases = (
+				4E2379B58F5EED9CB1A370C1 /* [CP] Check Pods Manifest.lock */,
 				89F03D772369E821003E10E3 /* Sources */,
 				89F03D782369E821003E10E3 /* Frameworks */,
 				89F03D792369E821003E10E3 /* Resources */,
+				6E249594737D2038221D8839 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +320,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E2379B58F5EED9CB1A370C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AFMusicPlaylist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E249594737D2038221D8839 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89F03D772369E821003E10E3 /* Sources */ = {
@@ -451,6 +527,7 @@
 		};
 		89F03D932369E823003E10E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47A9B140637119053B270362 /* Pods-AFMusicPlaylist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +546,7 @@
 		};
 		89F03D942369E823003E10E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E327B47EFEF6C163BD0E4BA /* Pods-AFMusicPlaylist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
