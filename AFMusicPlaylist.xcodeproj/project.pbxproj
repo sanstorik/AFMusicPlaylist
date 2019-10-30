@@ -14,6 +14,27 @@
 		89F03D8E2369E823003E10E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */; };
 		89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D962369E9D4003E10E3 /* CDUtility.swift */; };
 		89F03D9A2369EADB003E10E3 /* CoreDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D992369EADB003E10E3 /* CoreDataEntity.swift */; };
+		89F03DC62369EE23003E10E3 /* SearchHandlerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D9F2369EE23003E10E3 /* SearchHandlerDataSource.swift */; };
+		89F03DCC2369EE23003E10E3 /* SOSearchViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DA72369EE23003E10E3 /* SOSearchViewManager.swift */; };
+		89F03DCD2369EE23003E10E3 /* SOFiltarableSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DA82369EE23003E10E3 /* SOFiltarableSearchList.swift */; };
+		89F03DCF2369EE23003E10E3 /* SOSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DAB2369EE23003E10E3 /* SOSearchView.swift */; };
+		89F03DD22369EE23003E10E3 /* PersonSelectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */; };
+		89F03DD32369EE23003E10E3 /* SOSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DB02369EE23003E10E3 /* SOSearchData.swift */; };
+		89F03DE12369EE23003E10E3 /* ShowableObjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DBF2369EE23003E10E3 /* ShowableObjectSearchController.swift */; };
+		89F03DE22369EE23003E10E3 /* SearchRowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC12369EE23003E10E3 /* SearchRowAction.swift */; };
+		89F03DE32369EE23003E10E3 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC22369EE23003E10E3 /* SortCell.swift */; };
+		89F03DE42369EE23003E10E3 /* ShowableObjectSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC32369EE23003E10E3 /* ShowableObjectSearchCell.swift */; };
+		89F03DE52369EE23003E10E3 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC42369EE23003E10E3 /* ButtonCell.swift */; };
+		89F03DE62369EE23003E10E3 /* Array+FilteredSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DC52369EE23003E10E3 /* Array+FilteredSearch.swift */; };
+		89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DE82369EE99003E10E3 /* NavigationBar.swift */; };
+		89F03DEB2369EE99003E10E3 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DE92369EE99003E10E3 /* CommonViewController.swift */; };
+		89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DF62369F5C4003E10E3 /* UIViewExtensions.swift */; };
+		89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DF72369F5C4003E10E3 /* StringExtension.swift */; };
+		89F03DFC2369F5CF003E10E3 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DFA2369F5CF003E10E3 /* UIExtensions.swift */; };
+		89F03DFD2369F5CF003E10E3 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DFB2369F5CF003E10E3 /* SwiftExtensions.swift */; };
+		89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */; };
+		89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */; };
+		89F03E052369F6BE003E10E3 /* ButtonActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03E022369F6BE003E10E3 /* ButtonActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +47,27 @@
 		89F03D8F2369E823003E10E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89F03D962369E9D4003E10E3 /* CDUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUtility.swift; sourceTree = "<group>"; };
 		89F03D992369EADB003E10E3 /* CoreDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEntity.swift; sourceTree = "<group>"; };
+		89F03D9F2369EE23003E10E3 /* SearchHandlerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHandlerDataSource.swift; sourceTree = "<group>"; };
+		89F03DA72369EE23003E10E3 /* SOSearchViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchViewManager.swift; sourceTree = "<group>"; };
+		89F03DA82369EE23003E10E3 /* SOFiltarableSearchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOFiltarableSearchList.swift; sourceTree = "<group>"; };
+		89F03DAB2369EE23003E10E3 /* SOSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchView.swift; sourceTree = "<group>"; };
+		89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSelectionViewData.swift; sourceTree = "<group>"; };
+		89F03DB02369EE23003E10E3 /* SOSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchData.swift; sourceTree = "<group>"; };
+		89F03DBF2369EE23003E10E3 /* ShowableObjectSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchController.swift; sourceTree = "<group>"; };
+		89F03DC12369EE23003E10E3 /* SearchRowAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRowAction.swift; sourceTree = "<group>"; };
+		89F03DC22369EE23003E10E3 /* SortCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
+		89F03DC32369EE23003E10E3 /* ShowableObjectSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchCell.swift; sourceTree = "<group>"; };
+		89F03DC42369EE23003E10E3 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		89F03DC52369EE23003E10E3 /* Array+FilteredSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+FilteredSearch.swift"; sourceTree = "<group>"; };
+		89F03DE82369EE99003E10E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		89F03DE92369EE99003E10E3 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		89F03DF62369F5C4003E10E3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		89F03DF72369F5C4003E10E3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		89F03DFA2369F5CF003E10E3 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		89F03DFB2369F5CF003E10E3 /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizesExtensions.swift; sourceTree = "<group>"; };
+		89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledSwitch.swift; sourceTree = "<group>"; };
+		89F03E022369F6BE003E10E3 /* ButtonActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +115,10 @@
 		89F03D952369E9C8003E10E3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				89F03E062369F6C1003E10E3 /* CustomViews */,
+				89F03DF52369F5B0003E10E3 /* Extensions */,
+				89F03DE72369EE99003E10E3 /* CommonVC */,
+				89F03D9D2369EE23003E10E3 /* ShowableObjectSearchController */,
 				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
 			);
 			path = Utility;
@@ -84,6 +130,96 @@
 				89F03D992369EADB003E10E3 /* CoreDataEntity.swift */,
 			);
 			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		89F03D9D2369EE23003E10E3 /* ShowableObjectSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				89F03D9E2369EE23003E10E3 /* ShowableObjectSearchDataVC */,
+				89F03DBF2369EE23003E10E3 /* ShowableObjectSearchController.swift */,
+				89F03DC02369EE23003E10E3 /* CustomCells */,
+				89F03DC52369EE23003E10E3 /* Array+FilteredSearch.swift */,
+			);
+			name = ShowableObjectSearchController;
+			path = ../../../../BMSI/BestatterprogrammI/Utility/CustomViews/ShowableObjectSearchController;
+			sourceTree = "<group>";
+		};
+		89F03D9E2369EE23003E10E3 /* ShowableObjectSearchDataVC */ = {
+			isa = PBXGroup;
+			children = (
+				89F03D9F2369EE23003E10E3 /* SearchHandlerDataSource.swift */,
+				89F03DA12369EE23003E10E3 /* SOSearchView */,
+			);
+			path = ShowableObjectSearchDataVC;
+			sourceTree = "<group>";
+		};
+		89F03DA12369EE23003E10E3 /* SOSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DB02369EE23003E10E3 /* SOSearchData.swift */,
+				89F03DA22369EE23003E10E3 /* SearchViewManagers */,
+				89F03DAB2369EE23003E10E3 /* SOSearchView.swift */,
+				89F03DAC2369EE23003E10E3 /* SearchData */,
+			);
+			path = SOSearchView;
+			sourceTree = "<group>";
+		};
+		89F03DA22369EE23003E10E3 /* SearchViewManagers */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DA72369EE23003E10E3 /* SOSearchViewManager.swift */,
+				89F03DA82369EE23003E10E3 /* SOFiltarableSearchList.swift */,
+			);
+			path = SearchViewManagers;
+			sourceTree = "<group>";
+		};
+		89F03DAC2369EE23003E10E3 /* SearchData */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DAF2369EE23003E10E3 /* PersonSelectionViewData.swift */,
+			);
+			path = SearchData;
+			sourceTree = "<group>";
+		};
+		89F03DC02369EE23003E10E3 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DC12369EE23003E10E3 /* SearchRowAction.swift */,
+				89F03DC22369EE23003E10E3 /* SortCell.swift */,
+				89F03DC32369EE23003E10E3 /* ShowableObjectSearchCell.swift */,
+				89F03DC42369EE23003E10E3 /* ButtonCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		89F03DE72369EE99003E10E3 /* CommonVC */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DE82369EE99003E10E3 /* NavigationBar.swift */,
+				89F03DE92369EE99003E10E3 /* CommonViewController.swift */,
+			);
+			path = CommonVC;
+			sourceTree = "<group>";
+		};
+		89F03DF52369F5B0003E10E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89F03DFE2369F604003E10E3 /* DeviceSizesExtensions.swift */,
+				89F03DF72369F5C4003E10E3 /* StringExtension.swift */,
+				89F03DF62369F5C4003E10E3 /* UIViewExtensions.swift */,
+				89F03DFB2369F5CF003E10E3 /* SwiftExtensions.swift */,
+				89F03DFA2369F5CF003E10E3 /* UIExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89F03E062369F6C1003E10E3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				89F03E012369F6BE003E10E3 /* LabeledSwitch.swift */,
+				89F03E022369F6BE003E10E3 /* ButtonActionView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,11 +292,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F03DE32369EE23003E10E3 /* SortCell.swift in Sources */,
+				89F03DEB2369EE99003E10E3 /* CommonViewController.swift in Sources */,
 				89F03D832369E821003E10E3 /* ViewController.swift in Sources */,
+				89F03DCF2369EE23003E10E3 /* SOSearchView.swift in Sources */,
+				89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */,
 				89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */,
+				89F03DFC2369F5CF003E10E3 /* UIExtensions.swift in Sources */,
+				89F03DE12369EE23003E10E3 /* ShowableObjectSearchController.swift in Sources */,
+				89F03DFD2369F5CF003E10E3 /* SwiftExtensions.swift in Sources */,
+				89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */,
 				89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */,
+				89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */,
+				89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */,
+				89F03DCC2369EE23003E10E3 /* SOSearchViewManager.swift in Sources */,
+				89F03DC62369EE23003E10E3 /* SearchHandlerDataSource.swift in Sources */,
+				89F03E052369F6BE003E10E3 /* ButtonActionView.swift in Sources */,
+				89F03DE42369EE23003E10E3 /* ShowableObjectSearchCell.swift in Sources */,
 				89F03D9A2369EADB003E10E3 /* CoreDataEntity.swift in Sources */,
+				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
+				89F03DCD2369EE23003E10E3 /* SOFiltarableSearchList.swift in Sources */,
+				89F03DD32369EE23003E10E3 /* SOSearchData.swift in Sources */,
 				89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */,
+				89F03DE22369EE23003E10E3 /* SearchRowAction.swift in Sources */,
+				89F03DD22369EE23003E10E3 /* PersonSelectionViewData.swift in Sources */,
+				89F03DE62369EE23003E10E3 /* Array+FilteredSearch.swift in Sources */,
+				89F03DE52369EE23003E10E3 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

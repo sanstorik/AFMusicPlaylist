@@ -2,7 +2,7 @@
 
 import CoreData
 
-typealias UpdatableCoreDataEntity = UpdatableEntity & NSMAnagedObject
+typealias UpdatableCoreDataEntity = UpdatableEntity & NSManagedObject
 
 protocol UpdatableEntity: class {
     static var globalName: String { get }
