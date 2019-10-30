@@ -6,8 +6,7 @@ protocol NavigationBar {
 
 extension NavigationBar where Self: UIViewController {
     func setupNavigationBar(title: String? = nil, withImage imageView: UIView? = nil) {
-        navigationBar(title: title ?? "", bgColor: UIColor.black, textColor: UIColor.white)
-        
+        navigationBar(title: title ?? "", bgColor: AFColors.header, textColor: UIColor.white)
         navigationItem.titleView = imageView
     }
     
@@ -34,8 +33,7 @@ extension NavigationBar where Self: UIViewController {
 
         navigationController?.navigationBar.barTintColor = bgColor
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.isOpaque = true
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
         
         self.navigationController?.navigationBar.topItem?.backBarButtonItem =
             UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

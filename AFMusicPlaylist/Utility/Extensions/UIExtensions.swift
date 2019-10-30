@@ -91,6 +91,29 @@ class CorneredUIView: UIView {
 }
 
 
+class CorneredUIImageView: UIImageView {
+    private var radius: CGFloat
+
+    
+    init(radius: CGFloat = 0.5) {
+        self.radius = radius
+        super.init(frame: CGRect.zero)
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = bounds.size.width * radius
+    }
+}
+
+
 
 
 extension NSLayoutConstraint {
