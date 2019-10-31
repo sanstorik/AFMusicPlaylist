@@ -74,7 +74,7 @@ extension AFAlbumCell {
     
     private func spawnAlbumImage() -> UIImageView {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleToFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 1

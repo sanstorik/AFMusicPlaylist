@@ -59,16 +59,17 @@ class APIActionProvider<T: APIAction> {
     
     
     private func addGetParamsFor(url: inout String, action: APIAction) {
-          if action.params.count > 0 {
-              url += "?"
-              
-              action.params.forEach { (key, value) in
-                  url += "\(key)=\(value)&"
-              }
-              
-              url.removeLast()
-          }
-      }
+        if action.params.count > 0 {
+            url += "?"
+            
+            action.params.forEach { (key, value) in
+                url += "\(key)=\(value)&"
+            }
+            
+            url.removeLast()
+            url = url.replacingOccurrences(of: " ", with: "+")
+        }
+    }
 }
 
 

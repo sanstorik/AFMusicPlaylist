@@ -24,7 +24,7 @@ enum AFMusicPlaylistAPIAction: APIAction {
         case .artistAlbums(let artist):
             return paramsBy(adding: ["artist": artist, "method": "artist.gettopalbums"])
         case .albumDetailed(let name, let artist):
-            return paramsBy(adding: ["artist": artist, "album": name, "method": "album.getinfo"])
+            return paramsBy(adding: ["artist": artist, "album": name, "method": "album.getinfo", "autocorrect": "0"])
         case .artistSearch(let artist, let limit, let page):
             return paramsBy(adding: ["artist": artist, "limit": String(limit), "page": String(page),
                                      "method": "artist.search"])

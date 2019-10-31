@@ -18,12 +18,24 @@ struct AFStoredAlbumsUpdater: AFAlbumViewUpdater {
         return album.largeImage?.url
     }
     
+    
     var topText: String? {
-        return album.name
+        if let name = album.name, !name.isEmpty {
+            return name
+        }
+        
+        return "No name"
     }
     
+    
     var bottomText: String? {
-        return album.artist?.name
+        if let text = album.artist?.name, !text.isEmpty {
+            return text
+        } else if let text = album.artistName, !text.isEmpty {
+            return text
+        }
+        
+        return "No artist"
     }
     
     

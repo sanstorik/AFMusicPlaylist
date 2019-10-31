@@ -51,7 +51,7 @@ struct AFAlbum: Codable {
     }
     
     var largeImage: AFImage? {
-        return images.first { $0.size == "large" } ?? images.first { $0.size == "mega" } ?? images.first
+        return images.first { $0.size == "large" } ?? images.first { $0.size == "mega" } ?? images.first { $0.url != nil }
     }
     
     

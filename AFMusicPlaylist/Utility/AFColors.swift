@@ -10,4 +10,5 @@ struct AFColors {
     static let textColor = UIColor(red: 80, green: 80, blue: 80)
     static let purple = UIColor(red: 178, green: 141, blue: 242)
     static let highlightColor = UIColor(red: 90, green: 90, blue: 90)
+    static let deleteButton = UIColor(red: 209, green: 29, blue: 42)
 }

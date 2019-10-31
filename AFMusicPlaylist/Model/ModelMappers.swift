@@ -7,7 +7,7 @@ class AFAlbumUtility {
     func transformToApiVersion(album: CDAlbum) -> AFAlbum {
         let songUtility = AFSongUtility()
         let songs = album.songs.map { songUtility.transformToApiVersion(song: $0) }
-        let artist = AFArtist(name: album.artist ?? "", images: [])
+        let artist = AFArtist(name: album.artist, images: [])
         let album = AFAlbum(name: album.name, artist: artist, listeners: album.listeners, releaseDate: album.releaseDate,
                 songs: songs, images: [AFImage(url: album.largeImageUrl, size: "large")])
         
@@ -16,7 +16,7 @@ class AFAlbumUtility {
     
     
     func storeInDatabase(album: AFAlbum) {
-        guard let name = album.name, let artist = album.artist?.name else { return }
+        guard let name = album.name, let artist = album.artist?.name ?? album.artistName else { return }
         
         if let existing = getFromDatabaseBy(name: name, artist: artist) {
             updateDatabaseAlbum(existing, with: album)
@@ -30,7 +30,7 @@ class AFAlbumUtility {
     
     
     func removeFromDatabase(album: AFAlbum) {
-        guard let name = album.name, let artist = album.artist?.name else { return }
+        guard let name = album.name, let artist = album.artist?.name ?? album.artistName else { return }
         if let existing = getFromDatabaseBy(name: name, artist: artist) {
             CDUtility.shared.context.delete(existing)
             CDUtility.shared.context.saveContext()
@@ -47,7 +47,7 @@ class AFAlbumUtility {
     
     
     func updateDatabaseAlbum(_ album: CDAlbum, with apiAlbum: AFAlbum) {
-        album.artist = apiAlbum.artist?.name
+        album.artist = apiAlbum.artist?.name ?? apiAlbum.artistName
         album.largeImageUrl = apiAlbum.largeImage?.url
         album.listeners = apiAlbum.listeners
         album.name = apiAlbum.name

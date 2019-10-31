@@ -4,20 +4,28 @@ import UIKit
 
 class AFAlbumsVC: CommonViewController {
     private lazy var collectionView = spawnCollectionView()
-    private let albums: [AFAlbum]
+    private var albums = [AFAlbum]()
     private let updater: (AFAlbum) -> AFAlbumViewUpdater
+    private let fetcher: () -> [AFAlbum]
     
     
-    init(albums: [AFAlbum], updater: @escaping (AFAlbum) -> AFAlbumViewUpdater) {
-        self.albums = albums
+    init(fetcher: @escaping () -> [AFAlbum], updater: @escaping (AFAlbum) -> AFAlbumViewUpdater) {
+        self.fetcher = fetcher
         self.updater = updater
         super.init(nibName: nil, bundle: nil)
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.albums = fetcher()
+        collectionView.reloadData()
+    }
+    
+    
     required init?(coder: NSCoder) {
         updater = { AFStoredAlbumsUpdater(album: $0) }
-        albums = []
+        fetcher = { [] }
         super.init(coder: coder)
     }
     
@@ -47,8 +55,12 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailedVC = AFDetailedAlbum()
-        navigationController?.pushViewController(detailedVC, animated: true)
+        let selectedAlbum = albums[indexPath.row]
+        if let name = selectedAlbum.name, let artist = selectedAlbum.artist?.name ?? selectedAlbum.artistName {
+            let detailedVC = AFDetailedAlbumVC(name: "Purpose", artist: "Justin Bieber",
+                                               imageUrl: selectedAlbum.largeImage?.url)
+            navigationController?.pushViewController(detailedVC, animated: true)
+        }
     }
     
     
@@ -64,25 +76,25 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var size = view.frame.width / 2 - 50
+        var size = view.frame.width / 2 - 45
         
         if traitCollection.horizontalSizeClass == .regular {
             size = view.frame.width / 4
         }
         
-        return CGSize(width: size, height: size + 60)
+        return CGSize(width: size, height: size + 65)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 15, bottom: 15, right: 15)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 10)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 12
     }
     
     
@@ -93,7 +105,7 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -112,7 +124,8 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         cv.alwaysBounceVertical = true
         cv.dataSource = self
         cv.delegate = self
-        cv.contentInset = UIEdgeInsets(top: 15, left: 20, bottom: 0, right: 20)
+        cv.contentInset = UIEdgeInsets(top: 15, left: 25, bottom: 0, right: 25)
+        cv.insetsLayoutMarginsFromSafeArea = true
         cv.register(AFAlbumCell.self, forCellWithReuseIdentifier: AFAlbumCell.identifier)
         return cv
     }

@@ -217,7 +217,7 @@ protocol HighlightableView: class {
 }
 
 extension HighlightableView where Self: UIView {
-    func runSelectColorAnimation(_ color: UIColor = .lightGray) {
+    func runSelectColorAnimation(_ color: UIColor = AFColors.highlightColor) {
         if !highlightAnimationRunning {
             var previousCellColor: UIColor? = UIColor.clear
             if let cell = self as? UITableViewCell {
@@ -229,7 +229,7 @@ extension HighlightableView where Self: UIView {
                 self.backgroundColor = color
             }) { _ in
                 UIView.animate(withDuration: 0.2) {
-                    self.backgroundColor = UIColor.white
+                    self.backgroundColor = AFColors.header
                     
                     if let cell = self as? UITableViewCell {
                         cell.contentView.backgroundColor = previousCellColor
@@ -240,7 +240,7 @@ extension HighlightableView where Self: UIView {
     }
     
     
-    func changeColorOnUnhighlight(_ previousColor: UIColor = .lightGray) {
+    func changeColorOnUnhighlight(_ previousColor: UIColor = AFColors.highlightColor) {
         var previousCellColor: UIColor? = UIColor.clear
         if let cell = self as? UITableViewCell {
             previousCellColor = cell.contentView.backgroundColor
@@ -255,7 +255,7 @@ extension HighlightableView where Self: UIView {
                 cell.contentView.backgroundColor = previousCellColor
             }
             
-            self.backgroundColor = UIColor.white
+            self.backgroundColor = AFColors.header
         }) { _ in
             self.highlightAnimationRunning = false
         }
