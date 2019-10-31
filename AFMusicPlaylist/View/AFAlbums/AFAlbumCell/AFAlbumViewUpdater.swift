@@ -15,7 +15,7 @@ protocol AFAlbumViewUpdater {
 
 struct AFStoredAlbumsUpdater: AFAlbumViewUpdater {
     var imageUrl: String? {
-        return album.largeImageUrl
+        return album.largeImage?.url
     }
     
     var topText: String? {
@@ -23,7 +23,7 @@ struct AFStoredAlbumsUpdater: AFAlbumViewUpdater {
     }
     
     var bottomText: String? {
-        return album.artist
+        return album.artist?.name
     }
     
     

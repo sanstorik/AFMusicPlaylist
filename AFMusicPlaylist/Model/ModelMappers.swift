@@ -7,16 +7,16 @@ class AFAlbumUtility {
     func transformToApiVersion(album: CDAlbum) -> AFAlbum {
         let songUtility = AFSongUtility()
         let songs = album.songs.map { songUtility.transformToApiVersion(song: $0) }
-        let album = AFAlbum(name: album.name, artist: album.artist, listeners: album.listeners,
-                       mediumImageUrl: album.mediumImageUrl, largeImageUrl: album.largeImageUrl,
-                       releaseDate: album.releaseDate, songs: songs)
+        let artist = AFArtist(name: album.artist ?? "", images: [])
+        let album = AFAlbum(name: album.name, artist: artist, listeners: album.listeners, releaseDate: album.releaseDate,
+                songs: songs, images: [AFImage(url: album.largeImageUrl, size: "large")])
         
         return album
     }
     
     
     func storeInDatabase(album: AFAlbum) {
-        guard let name = album.name, let artist = album.artist else { return }
+        guard let name = album.name, let artist = album.artist?.name else { return }
         
         if let existing = getFromDatabaseBy(name: name, artist: artist) {
             updateDatabaseAlbum(existing, with: album)
@@ -30,7 +30,7 @@ class AFAlbumUtility {
     
     
     func removeFromDatabase(album: AFAlbum) {
-        guard let name = album.name, let artist = album.artist else { return }
+        guard let name = album.name, let artist = album.artist?.name else { return }
         if let existing = getFromDatabaseBy(name: name, artist: artist) {
             CDUtility.shared.context.delete(existing)
             CDUtility.shared.context.saveContext()
@@ -47,19 +47,18 @@ class AFAlbumUtility {
     
     
     func updateDatabaseAlbum(_ album: CDAlbum, with apiAlbum: AFAlbum) {
-        album.artist = apiAlbum.artist
-        album.largeImageUrl = apiAlbum.largeImageUrl
+        album.artist = apiAlbum.artist?.name
+        album.largeImageUrl = apiAlbum.largeImage?.url
         album.listeners = apiAlbum.listeners
-        album.mediumImageUrl = apiAlbum.mediumImageUrl
         album.name = apiAlbum.name
         album.releaseDate = apiAlbum.releaseDate
         
         album.songs.removeAll()
-        for song in apiAlbum.songs {
+        for song in apiAlbum.songList?.tracks ?? [] {
             let cdSong = CDSong(context: CDUtility.shared.context)
             cdSong.duration = song.duration
             cdSong.name = song.name
-            cdSong.artists = song.artists
+            cdSong.artists = []
             album.songs.insert(cdSong)
         }
     }
@@ -68,6 +67,6 @@ class AFAlbumUtility {
 
 class AFSongUtility {
     func transformToApiVersion(song: CDSong) -> AFSong {
-        return AFSong(duration: song.duration, name: song.name, artists: song.artists)
+        return AFSong(duration: song.duration, name: song.name, artist: AFSongArtist(name: nil))
     }
 }

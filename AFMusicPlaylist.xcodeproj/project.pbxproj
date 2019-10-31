@@ -21,6 +21,10 @@
 		604A0F6B236ADBD400F61F17 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F6A236ADBD400F61F17 /* APIRequest.swift */; };
 		604A0F6D236ADDB400F61F17 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F6C236ADDB400F61F17 /* UIImageView+Download.swift */; };
 		604A0F6F236ADE9C00F61F17 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F6E236ADE9C00F61F17 /* ObservableEvent.swift */; };
+		604A0F71236AE6D800F61F17 /* APIActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F70236AE6D800F61F17 /* APIActionProvider.swift */; };
+		604A0F73236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F72236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift */; };
+		604A0F75236AF71000F61F17 /* AFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F74236AF71000F61F17 /* AFImage.swift */; };
+		604A0F77236B0A7D00F61F17 /* AFArtistSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F76236B0A7D00F61F17 /* AFArtistSearch.swift */; };
 		8972DB65236A27CF00D787EA /* AFColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972DB64236A27CF00D787EA /* AFColors.swift */; };
 		89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D7E2369E821003E10E3 /* AppDelegate.swift */; };
 		89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D822369E821003E10E3 /* AFAlbumsVC.swift */; };
@@ -59,6 +63,10 @@
 		604A0F6A236ADBD400F61F17 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		604A0F6C236ADDB400F61F17 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		604A0F6E236ADE9C00F61F17 /* ObservableEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
+		604A0F70236AE6D800F61F17 /* APIActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIActionProvider.swift; sourceTree = "<group>"; };
+		604A0F72236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFMusicPlaylistAPIAction.swift; sourceTree = "<group>"; };
+		604A0F74236AF71000F61F17 /* AFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFImage.swift; sourceTree = "<group>"; };
+		604A0F76236B0A7D00F61F17 /* AFArtistSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFArtistSearch.swift; sourceTree = "<group>"; };
 		6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFMusicPlaylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8972DB64236A27CF00D787EA /* AFColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFColors.swift; sourceTree = "<group>"; };
 		89F03D7B2369E821003E10E3 /* AFMusicPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMusicPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +120,8 @@
 			children = (
 				604A0F6A236ADBD400F61F17 /* APIRequest.swift */,
 				604A0F6E236ADE9C00F61F17 /* ObservableEvent.swift */,
+				604A0F70236AE6D800F61F17 /* APIActionProvider.swift */,
+				604A0F72236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -248,7 +258,9 @@
 				89F03E0A236A12D0003E10E3 /* AFAlbum.swift */,
 				89F03E0C236A12D8003E10E3 /* AFArtist.swift */,
 				604A0F62236AD22800F61F17 /* AFSong.swift */,
+				604A0F74236AF71000F61F17 /* AFImage.swift */,
 				604A0F65236AD39400F61F17 /* ModelMappers.swift */,
+				604A0F76236B0A7D00F61F17 /* AFArtistSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +399,7 @@
 			files = (
 				604A0F54236ABFC000F61F17 /* AFAlbumCell.swift in Sources */,
 				604A0F63236AD22800F61F17 /* AFSong.swift in Sources */,
+				604A0F75236AF71000F61F17 /* AFImage.swift in Sources */,
 				89F03DEB2369EE99003E10E3 /* CommonViewController.swift in Sources */,
 				89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */,
 				89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */,
@@ -399,6 +412,7 @@
 				604A0F68236AD58F00F61F17 /* AFDetailedAlbum.swift in Sources */,
 				604A0F66236AD39400F61F17 /* ModelMappers.swift in Sources */,
 				89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */,
+				604A0F77236B0A7D00F61F17 /* AFArtistSearch.swift in Sources */,
 				89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */,
 				604A0F5E236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift in Sources */,
 				8972DB65236A27CF00D787EA /* AFColors.swift in Sources */,
@@ -416,6 +430,8 @@
 				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
 				89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */,
 				604A0F6B236ADBD400F61F17 /* APIRequest.swift in Sources */,
+				604A0F73236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift in Sources */,
+				604A0F71236AE6D800F61F17 /* APIActionProvider.swift in Sources */,
 				89F03E09236A1281003E10E3 /* ProgressLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
