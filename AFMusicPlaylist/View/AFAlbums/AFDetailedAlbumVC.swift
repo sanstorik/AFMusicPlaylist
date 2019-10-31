@@ -40,12 +40,11 @@ class AFDetailedAlbumVC: AFDynamicCellTableViewVC {
         
         provider.request(action: .albumDetailed(name: name, artist: artist)) { result in
             switch result {
-            case .success(let json, let data):
+            case .success(_, let data):
                 if let detailedAlbum = try? JSONDecoder().decode(AFAlbumDetailed.self, from: data),
                     let fetchedAlbum = detailedAlbum.album {
                     self.album = fetchedAlbum
                     self.setupRowsForLoadedAlbum()
-                    print(json)
                 }
             default:
                 break

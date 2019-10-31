@@ -26,7 +26,7 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateAllDataSection(filterText: searchTextDelegate?.searchText)
+        //updateAllDataSection(filterText: searchTextDelegate?.searchText)
     }
     
     
@@ -137,9 +137,14 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
             fatalError()
         }
         
+        
         if let searchRowAction = section.rowAction as? UpdatableSearchRowAction {
             searchRowAction.searchPositionDidUpdate = { [weak self] in
-                self?.updateAllDataSection(filterText: self?.searchTextDelegate?.searchText)
+                if searchRowAction is SearchSortAction<T> {
+                    self?.sortObjectsSync(filterText: self?.searchTextDelegate?.searchText)
+                } else {
+                    self?.updateAllDataSection(filterText: self?.searchTextDelegate?.searchText)
+                }
             }
         }
         
@@ -172,6 +177,21 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
                 }
             }
         }
+    }
+    
+    
+    final func sortObjectsSync(filterText: String?) {
+        let filterCollector = collectSearchPositions()
+        var sectionsToReload = IndexSet()
+        
+        for i in 0..<sections.count {
+            if let dataSection = sectionToSearchDataSection(sections[i]) {
+                dataSection.sortObjects(filterText, filterCollector: filterCollector)
+                sectionsToReload.insert(i)
+            }
+        }
+        
+        self.searchTableView.reloadSections(sectionsToReload, with: .fade)
     }
     
     

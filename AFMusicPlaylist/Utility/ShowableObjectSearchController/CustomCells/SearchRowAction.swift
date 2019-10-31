@@ -89,6 +89,7 @@ protocol SearchableDataSection: class {
     func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>,
                              didLoadItems: @escaping () -> Void)
     func requiresPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void)
+    func sortObjects(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>)
 }
 
 
@@ -159,6 +160,11 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
             self.resultingList += $0
             didFetchItems(self.createIndeciesForPage(currentPage))
         }
+    }
+    
+    
+    func sortObjects(_ text: String?, filterCollector: SearchFilterCollector<T>) {
+        resultingList = resultingList.apply(sorting: filterCollector.sortingPositions, ascendingOrder: filterCollector.sortAscending)
     }
     
     
