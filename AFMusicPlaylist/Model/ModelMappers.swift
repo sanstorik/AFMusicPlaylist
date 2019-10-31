@@ -13,6 +13,56 @@ class AFAlbumUtility {
         
         return album
     }
+    
+    
+    func storeInDatabase(album: AFAlbum) {
+        guard let name = album.name, let artist = album.artist else { return }
+        
+        if let existing = getFromDatabaseBy(name: name, artist: artist) {
+            updateDatabaseAlbum(existing, with: album)
+        } else {
+            let cdAlbum = CDAlbum(context: CDUtility.shared.context)
+            updateDatabaseAlbum(cdAlbum, with: album)
+        }
+        
+        CDUtility.shared.context.saveContext()
+    }
+    
+    
+    func removeFromDatabase(album: AFAlbum) {
+        guard let name = album.name, let artist = album.artist else { return }
+        if let existing = getFromDatabaseBy(name: name, artist: artist) {
+            CDUtility.shared.context.delete(existing)
+            CDUtility.shared.context.saveContext()
+        }
+    }
+    
+    
+    func getFromDatabaseBy(name: String, artist: String) -> CDAlbum? {
+        let predicate = NSPredicate(format: "name == %@ AND artist == %@", name, artist)
+        let albums: [CDAlbum] = CDUtility.shared.objectsBy(predicate: predicate)
+        
+        return albums.first
+    }
+    
+    
+    func updateDatabaseAlbum(_ album: CDAlbum, with apiAlbum: AFAlbum) {
+        album.artist = apiAlbum.artist
+        album.largeImageUrl = apiAlbum.largeImageUrl
+        album.listeners = apiAlbum.listeners
+        album.mediumImageUrl = apiAlbum.mediumImageUrl
+        album.name = apiAlbum.name
+        album.releaseDate = apiAlbum.releaseDate
+        
+        album.songs.removeAll()
+        for song in apiAlbum.songs {
+            let cdSong = CDSong(context: CDUtility.shared.context)
+            cdSong.duration = song.duration
+            cdSong.name = song.name
+            cdSong.artists = song.artists
+            album.songs.insert(cdSong)
+        }
+    }
 }
 
 

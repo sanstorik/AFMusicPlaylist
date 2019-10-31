@@ -11,6 +11,10 @@ class AFAlbumCell: UICollectionViewCell {
         didSet {
             nameLabel.text = albumUpdater?.topText
             artistLabel.text = albumUpdater?.bottomText
+            
+            if let url = albumUpdater?.imageUrl {
+                albumImageView.setImageAsyncFrom(url: url)
+            }
         }
     }
 

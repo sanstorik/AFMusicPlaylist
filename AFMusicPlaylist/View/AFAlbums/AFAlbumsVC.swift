@@ -41,8 +41,14 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         
         cell.albumUpdater = updater(albums[indexPath.row])
         cell.selectedBackgroundView = UIView()
-        cell.selectedBackgroundView?.backgroundColor = AFColors.highlightColor
+        cell.selectedBackgroundView?.backgroundColor = .clear
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailedVC = AFDetailedAlbum()
+        navigationController?.pushViewController(detailedVC, animated: true)
     }
     
     
@@ -58,17 +64,25 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var size = view.frame.width / 2 - 50
+        
         if traitCollection.horizontalSizeClass == .regular {
-            return CGSize(width: view.frame.width / 2.7, height: 200)
+            size = view.frame.width / 4
         }
         
-        return CGSize(width: view.frame.width / 2 - 50, height: 250)
+        return CGSize(width: size, height: size + 60)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        return UIEdgeInsets(top: 10, left: 15, bottom: 15, right: 15)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
     
     
@@ -95,11 +109,10 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     private func spawnCollectionView() -> UICollectionView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.allowsSelection = false
         cv.alwaysBounceVertical = true
         cv.dataSource = self
         cv.delegate = self
-        cv.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        cv.contentInset = UIEdgeInsets(top: 15, left: 20, bottom: 0, right: 20)
         cv.register(AFAlbumCell.self, forCellWithReuseIdentifier: AFAlbumCell.identifier)
         return cv
     }
