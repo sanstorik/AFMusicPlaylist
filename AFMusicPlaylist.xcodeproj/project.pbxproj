@@ -10,6 +10,7 @@
 		2F3ABB4DE770C19C8A12D29D /* Pods_AFMusicPlaylist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */; };
 		604A0F54236ABFC000F61F17 /* AFAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F53236ABFC000F61F17 /* AFAlbumCell.swift */; };
 		604A0F57236AC48C00F61F17 /* AFAlbumViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F56236AC48C00F61F17 /* AFAlbumViewUpdater.swift */; };
+		604A0F59236ACE5800F61F17 /* AFStoredAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F58236ACE5800F61F17 /* AFStoredAlbumsVC.swift */; };
 		8972DB65236A27CF00D787EA /* AFColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972DB64236A27CF00D787EA /* AFColors.swift */; };
 		89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D7E2369E821003E10E3 /* AppDelegate.swift */; };
 		89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D822369E821003E10E3 /* AFAlbumsVC.swift */; };
@@ -37,6 +38,7 @@
 		47A9B140637119053B270362 /* Pods-AFMusicPlaylist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMusicPlaylist.debug.xcconfig"; path = "Target Support Files/Pods-AFMusicPlaylist/Pods-AFMusicPlaylist.debug.xcconfig"; sourceTree = "<group>"; };
 		604A0F53236ABFC000F61F17 /* AFAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumCell.swift; sourceTree = "<group>"; };
 		604A0F56236AC48C00F61F17 /* AFAlbumViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumViewUpdater.swift; sourceTree = "<group>"; };
+		604A0F58236ACE5800F61F17 /* AFStoredAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFStoredAlbumsVC.swift; sourceTree = "<group>"; };
 		6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFMusicPlaylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8972DB64236A27CF00D787EA /* AFColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFColors.swift; sourceTree = "<group>"; };
 		89F03D7B2369E821003E10E3 /* AFMusicPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMusicPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			children = (
 				604A0F55236AC47A00F61F17 /* AFAlbumCell */,
 				89F03D822369E821003E10E3 /* AFAlbumsVC.swift */,
+				604A0F58236ACE5800F61F17 /* AFStoredAlbumsVC.swift */,
 			);
 			path = AFAlbums;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */,
 				89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */,
 				89F03DFC2369F5CF003E10E3 /* UIExtensions.swift in Sources */,
+				604A0F59236ACE5800F61F17 /* AFStoredAlbumsVC.swift in Sources */,
 				89F03DFD2369F5CF003E10E3 /* SwiftExtensions.swift in Sources */,
 				89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */,
 				89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */,

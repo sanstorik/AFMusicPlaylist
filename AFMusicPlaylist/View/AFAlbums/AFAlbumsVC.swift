@@ -4,7 +4,22 @@ import UIKit
 
 class AFAlbumsVC: CommonViewController {
     private lazy var collectionView = spawnCollectionView()
-    private var albums = [AFAlbum(name: "First"), AFAlbum(name: "second"), AFAlbum(name: "third")]
+    private let albums: [AFAlbum]
+    private let updater: (AFAlbum) -> AFAlbumViewUpdater
+    
+    
+    init(albums: [AFAlbum], updater: @escaping (AFAlbum) -> AFAlbumViewUpdater) {
+        self.albums = albums
+        self.updater = updater
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        updater = { AFStoredAlbumsUpdater(album: $0) }
+        albums = []
+        super.init(coder: coder)
+    }
     
     
     override func viewDidLoad() {
@@ -24,7 +39,7 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
             fatalError()
         }
         
-        cell.albumUpdater = AFStoredAlbumsUpdater(album: albums[indexPath.row])
+        cell.albumUpdater = updater(albums[indexPath.row])
         cell.selectedBackgroundView = UIView()
         cell.selectedBackgroundView?.backgroundColor = AFColors.highlightColor
         return cell
