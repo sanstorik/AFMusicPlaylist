@@ -40,6 +40,7 @@ struct AFAlbum: Codable {
     let songList: AFListSongHolder?
     let images: [AFImage]
     let artistName: String?
+    let playedCount: Int64
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -48,6 +49,7 @@ struct AFAlbum: Codable {
         case listeners = "listeners"
         case songList = "tracks"
         case releaseDate = "releasedate"
+        case playedCount = "playcount"
     }
     
     var largeImage: AFImage? {
@@ -74,6 +76,12 @@ struct AFAlbum: Codable {
         } else {
             artistName = artist?.name
         }
+        
+        if let nPlayCount = try? container.decodeIfPresent(Int64.self, forKey: .playedCount) {
+            playedCount = nPlayCount
+        } else {
+            playedCount = 0
+        }
     }
     
     
@@ -85,5 +93,6 @@ struct AFAlbum: Codable {
         self.images = images
         self.releaseDate = releaseDate
         self.artistName = artist.name
+        self.playedCount = 0
     }
 }

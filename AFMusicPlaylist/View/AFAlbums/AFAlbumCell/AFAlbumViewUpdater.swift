@@ -64,7 +64,7 @@ struct AFArtistsAlbumsUpdater: AFAlbumViewUpdater {
     
     
     var bottomText: String? {
-        return "\(album.listeners) \(peoplePluralForm(count: album.listeners)) to it with you."
+        return "\(album.playedCount) times"
     }
     
     
