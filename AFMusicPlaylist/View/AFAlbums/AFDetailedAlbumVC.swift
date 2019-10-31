@@ -47,11 +47,6 @@ class AFDetailedAlbumVC: AFDynamicCellTableViewVC {
                     self.setupRowsForLoadedAlbum()
                     print(json)
                 }
-            case .error(let json):
-                print("error \(json)")
-                break
-            case .failure:
-                print("failure")
             default:
                 break
             }

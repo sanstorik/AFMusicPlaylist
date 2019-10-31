@@ -16,6 +16,16 @@ struct AFArtist: Codable {
     }
     
     
+    var largeImage: AFImage? {
+        return images.first { $0.size == "large" } ?? images.first { $0.size == "mega" } ?? images.first { $0.url != nil }
+    }
+    
+    
+    var smallImage: AFImage? {
+        return images.first { $0.size == "small" } ?? images.first { $0.size == "medium" } ?? images.first { $0.url != nil }
+    }
+    
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try? container.decodeIfPresent(String.self, forKey: .name)

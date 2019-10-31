@@ -57,6 +57,15 @@ extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler {
     func showIcons() {
         let searchIcon = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(startSearch))
         navigationItem.rightBarButtonItem = searchIcon
+        navigationItem.title = "Albums"
+    }
+    
+    
+    func hideIcons() {
+        navigationItem.title = "Artists"
+        navigationItem.leftBarButtonItems = nil
+        navigationItem.rightBarButtonItems = nil
+        navigationItem.hidesBackButton = true
     }
 }
 

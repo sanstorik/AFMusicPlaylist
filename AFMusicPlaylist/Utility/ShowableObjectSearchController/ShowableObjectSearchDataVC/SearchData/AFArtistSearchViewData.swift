@@ -67,8 +67,8 @@ fileprivate func createAFArtistsSearchSections(
 
 
 final class AFArtistSearchHandler: SearchableObjectHandler<AFArtist> {
-    //var dataSource: SearchDataSourceWrapper<AFArtist>?
     weak var searchNavigationDelegate: SearchNavigationDelegate?
+    private let provider = APIActionProvider<AFMusicPlaylistAPIAction>()
 
     
     override func selectedRow(with object: AFArtist) {
@@ -76,10 +76,19 @@ final class AFArtistSearchHandler: SearchableObjectHandler<AFArtist> {
     }
     
     
-    override func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: ([AFArtist]) -> Void) {
-        didLoad([
-            AFArtist(name: "first", images: [], listeners: 0),
-            AFArtist(name: "second", images: [], listeners: 0)]
-        )
+    override func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: @escaping ([AFArtist]) -> Void) {
+        provider.request(action: .artistSearch(artist: text ?? "", limit: limits, page: page)) { response in
+            switch response {
+            case .success(let json, let data):
+                print(json)
+                if let artistsResult = try? JSONDecoder().decode(AFArtistSearch.self, from: data) {
+                    didLoad(artistsResult.results.artistmatches.artists)
+                } else {
+                    didLoad([])
+                }
+            default:
+                didLoad([])
+            }
+        }
     }
 }

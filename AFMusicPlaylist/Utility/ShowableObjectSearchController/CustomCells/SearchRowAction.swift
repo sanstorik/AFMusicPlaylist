@@ -86,15 +86,16 @@ final class SearchSortAction<T>: UpdatableSearchRowAction {
 
 protocol SearchableDataSection: class {
     associatedtype SearchableObject
-    func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>, didLoadItems: () -> Void)
-    func requiresPagination(_ text: String?, _ didFetchItems: ([Int]) -> Void)
+    func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>,
+                             didLoadItems: @escaping () -> Void)
+    func requiresPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void)
 }
 
 
 protocol ISearchableObjectDelegate: class {
     associatedtype SearchableObject
     func selectedRow(with object: SearchableObject)
-    func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: ([SearchableObject]) -> Void)
+    func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: @escaping ([SearchableObject]) -> Void)
 }
 
 
@@ -102,7 +103,7 @@ class SearchableObjectHandler<T>: ISearchableObjectDelegate {
     typealias SearchableObject = T
     
     open func selectedRow(with object: T) { }
-    open func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: ([T]) -> Void) {
+    open func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: @escaping ([T]) -> Void) {
         didLoad([])
     }
 }
@@ -142,7 +143,7 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
     }
     
     
-    func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<T>, didLoadItems: () -> Void) {
+    func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<T>, didLoadItems: @escaping () -> Void) {
         currentPage = 1
         searchableObjectDelegate?.loadItems(at: currentPage, with: pageLimit, filteredBy: text) {
             self.resultingList = $0.apply(filters: filterCollector.filteringPositions)
@@ -152,7 +153,7 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
     }
     
     
-    func requiresPagination(_ text: String?, _ didFetchItems: ([Int]) -> Void) {
+    func requiresPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void) {
         currentPage += 1
         searchableObjectDelegate?.loadItems(at: currentPage, with: pageLimit, filteredBy: text) { [currentPage] in
             self.resultingList += $0

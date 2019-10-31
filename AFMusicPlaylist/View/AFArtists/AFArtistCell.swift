@@ -11,7 +11,10 @@ class AFArtistCell: UITableViewCell {
     var artist: AFArtist? {
         didSet {
             nameLabel.text = artist?.name
-            avatarImage.showLoader(style: .clearLight, scaleByParentSize: true)
+            
+            if let imageUrl = artist?.smallImage?.url {
+                avatarImage.setImageAsyncFrom(url: imageUrl)
+            }
         }
     }
     

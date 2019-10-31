@@ -170,8 +170,6 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
                     self.view.removeLoader()
                     self.searchTableView.reloadSections(IndexSet(arrayLiteral: i), with: .fade)
                 }
-                
-                break
             }
         }
     }
