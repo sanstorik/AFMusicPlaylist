@@ -13,7 +13,7 @@ class AFArtistCell: UITableViewCell {
             nameLabel.text = artist?.name
             
             if let imageUrl = artist?.smallImage?.url {
-                avatarImage.setImageAsyncFrom(url: imageUrl)
+                avatarImage.setImageAsyncFrom(url: imageUrl, fallback: UIImage(named: "person_icon"))
             }
         }
     }

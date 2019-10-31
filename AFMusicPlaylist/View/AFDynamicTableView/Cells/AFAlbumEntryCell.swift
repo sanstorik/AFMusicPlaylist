@@ -29,7 +29,7 @@ class AFAlbumEntryCell: AFTemplateCell {
         guard let entryData = data as? AFAlbumEntryData else { return }
         
         if let imageUrl = entryData.album.largeImage?.url {
-            albumImageView.setImageAsyncFrom(url: imageUrl)
+            albumImageView.setImageAsyncFrom(url: imageUrl, fallback: UIImage(named: "album_icon"))
         }
         
         nameLabel.text = entryData.album.name

@@ -13,7 +13,7 @@ class AFAlbumCell: UICollectionViewCell {
             artistLabel.text = albumUpdater?.bottomText
             
             if let url = albumUpdater?.imageUrl {
-                albumImageView.setImageAsyncFrom(url: url)
+                albumImageView.setImageAsyncFrom(url: url, fallback: UIImage(named: "album_icon"))
             }
         }
     }
