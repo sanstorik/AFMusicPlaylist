@@ -11,10 +11,6 @@
 		604A0F54236ABFC000F61F17 /* AFAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F53236ABFC000F61F17 /* AFAlbumCell.swift */; };
 		604A0F57236AC48C00F61F17 /* AFAlbumViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F56236AC48C00F61F17 /* AFAlbumViewUpdater.swift */; };
 		604A0F59236ACE5800F61F17 /* AFStoredAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F58236ACE5800F61F17 /* AFStoredAlbumsVC.swift */; };
-		604A0F5E236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F5A236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift */; };
-		604A0F5F236AD01F00F61F17 /* CDAlbum+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F5B236AD01F00F61F17 /* CDAlbum+CoreDataProperties.swift */; };
-		604A0F60236AD01F00F61F17 /* CDSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F5C236AD01F00F61F17 /* CDSong+CoreDataClass.swift */; };
-		604A0F61236AD01F00F61F17 /* CDSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F5D236AD01F00F61F17 /* CDSong+CoreDataProperties.swift */; };
 		604A0F63236AD22800F61F17 /* AFSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F62236AD22800F61F17 /* AFSong.swift */; };
 		604A0F66236AD39400F61F17 /* ModelMappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F65236AD39400F61F17 /* ModelMappers.swift */; };
 		604A0F68236AD58F00F61F17 /* AFDetailedAlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F67236AD58F00F61F17 /* AFDetailedAlbumVC.swift */; };
@@ -30,6 +26,10 @@
 		604A0F7F236B130100F61F17 /* AFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F7E236B130100F61F17 /* AFButtonCell.swift */; };
 		604A0F81236B1A8000F61F17 /* AFAlbumEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F80236B1A8000F61F17 /* AFAlbumEntryCell.swift */; };
 		8972DB65236A27CF00D787EA /* AFColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972DB64236A27CF00D787EA /* AFColors.swift */; };
+		8995CBB8236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */; };
+		8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */; };
+		8995CBBA236B46AB0047C32D /* CDSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */; };
+		8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */; };
 		89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D7E2369E821003E10E3 /* AppDelegate.swift */; };
 		89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D822369E821003E10E3 /* AFAlbumsVC.swift */; };
 		89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */; };
@@ -57,10 +57,6 @@
 		604A0F53236ABFC000F61F17 /* AFAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumCell.swift; sourceTree = "<group>"; };
 		604A0F56236AC48C00F61F17 /* AFAlbumViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumViewUpdater.swift; sourceTree = "<group>"; };
 		604A0F58236ACE5800F61F17 /* AFStoredAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFStoredAlbumsVC.swift; sourceTree = "<group>"; };
-		604A0F5A236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		604A0F5B236AD01F00F61F17 /* CDAlbum+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		604A0F5C236AD01F00F61F17 /* CDSong+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		604A0F5D236AD01F00F61F17 /* CDSong+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		604A0F62236AD22800F61F17 /* AFSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSong.swift; sourceTree = "<group>"; };
 		604A0F65236AD39400F61F17 /* ModelMappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMappers.swift; sourceTree = "<group>"; };
 		604A0F67236AD58F00F61F17 /* AFDetailedAlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFDetailedAlbumVC.swift; sourceTree = "<group>"; };
@@ -77,6 +73,10 @@
 		604A0F80236B1A8000F61F17 /* AFAlbumEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumEntryCell.swift; sourceTree = "<group>"; };
 		6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFMusicPlaylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8972DB64236A27CF00D787EA /* AFColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFColors.swift; sourceTree = "<group>"; };
+		8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89F03D7B2369E821003E10E3 /* AFMusicPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMusicPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F03D7E2369E821003E10E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89F03D822369E821003E10E3 /* AFAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumsVC.swift; sourceTree = "<group>"; };
@@ -225,10 +225,10 @@
 		89F03D982369EACD003E10E3 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				604A0F5A236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift */,
-				604A0F5B236AD01F00F61F17 /* CDAlbum+CoreDataProperties.swift */,
-				604A0F5C236AD01F00F61F17 /* CDSong+CoreDataClass.swift */,
-				604A0F5D236AD01F00F61F17 /* CDSong+CoreDataProperties.swift */,
+				8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */,
+				8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */,
+				8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */,
+				8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */,
 				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
 				89F03D992369EADB003E10E3 /* UpdatableEntity.swift */,
 				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
@@ -431,21 +431,20 @@
 				89F03DEB2369EE99003E10E3 /* CommonViewController.swift in Sources */,
 				89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */,
 				89F03DFF2369F604003E10E3 /* DeviceSizesExtensions.swift in Sources */,
-				604A0F60236AD01F00F61F17 /* CDSong+CoreDataClass.swift in Sources */,
 				604A0F6D236ADDB400F61F17 /* UIImageView+Download.swift in Sources */,
 				89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */,
 				89F03DFC2369F5CF003E10E3 /* UIExtensions.swift in Sources */,
 				604A0F59236ACE5800F61F17 /* AFStoredAlbumsVC.swift in Sources */,
 				89F03DFD2369F5CF003E10E3 /* SwiftExtensions.swift in Sources */,
+				8995CBBA236B46AB0047C32D /* CDSong+CoreDataClass.swift in Sources */,
 				604A0F68236AD58F00F61F17 /* AFDetailedAlbumVC.swift in Sources */,
 				604A0F66236AD39400F61F17 /* ModelMappers.swift in Sources */,
 				89F03DF82369F5C4003E10E3 /* UIViewExtensions.swift in Sources */,
 				604A0F77236B0A7D00F61F17 /* AFArtistSearch.swift in Sources */,
 				89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */,
-				604A0F5E236AD01F00F61F17 /* CDAlbum+CoreDataClass.swift in Sources */,
 				8972DB65236A27CF00D787EA /* AFColors.swift in Sources */,
-				604A0F5F236AD01F00F61F17 /* CDAlbum+CoreDataProperties.swift in Sources */,
 				89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */,
+				8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */,
 				89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */,
 				604A0F57236AC48C00F61F17 /* AFAlbumViewUpdater.swift in Sources */,
 				89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */,
@@ -454,7 +453,6 @@
 				604A0F81236B1A8000F61F17 /* AFAlbumEntryCell.swift in Sources */,
 				89F03E0B236A12D0003E10E3 /* AFAlbum.swift in Sources */,
 				89F03D9A2369EADB003E10E3 /* UpdatableEntity.swift in Sources */,
-				604A0F61236AD01F00F61F17 /* CDSong+CoreDataProperties.swift in Sources */,
 				89F03E11236A15F2003E10E3 /* AFArtistCell.swift in Sources */,
 				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
 				604A0F7A236B11C100F61F17 /* AFDynamicTableViewVC.swift in Sources */,
@@ -462,6 +460,8 @@
 				604A0F6B236ADBD400F61F17 /* APIRequest.swift in Sources */,
 				604A0F73236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift in Sources */,
 				604A0F7F236B130100F61F17 /* AFButtonCell.swift in Sources */,
+				8995CBB8236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift in Sources */,
+				8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */,
 				604A0F7D236B11F300F61F17 /* AFTemplateCell.swift in Sources */,
 				604A0F71236AE6D800F61F17 /* APIActionProvider.swift in Sources */,
 				89F03E09236A1281003E10E3 /* ProgressLoader.swift in Sources */,
