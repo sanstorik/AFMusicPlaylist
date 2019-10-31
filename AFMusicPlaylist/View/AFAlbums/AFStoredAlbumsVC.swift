@@ -4,7 +4,6 @@ import UIKit
 
 class AFStoredAlbumsVC: AFAlbumsVC {
     init() {
-        let albums: [CDAlbum] = CDUtility.shared.fetch()
         let fetcher: () -> [AFAlbum] = {
             let mapper = AFAlbumUtility()
             let albums: [CDAlbum] = CDUtility.shared.fetch()
