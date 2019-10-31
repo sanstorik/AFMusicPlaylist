@@ -60,6 +60,12 @@ extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler, AFRel
     func updateSources(with albums: [AFAlbum]) {
         self.albums = albums
         self.collectionView.reloadData()
+        
+        if albums.count == 0 {
+            view.showMessageWithNoContentAvailable(message: "You haven't stored any albums yet. Go fetch some using the search.")
+        } else {
+            view.hideNoContentMessage()
+        }
     }
     
     func pushViewController(_ vc: UIViewController) {

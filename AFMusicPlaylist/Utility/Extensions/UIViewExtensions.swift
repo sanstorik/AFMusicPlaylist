@@ -3,12 +3,52 @@ import UIKit
 extension UIView {
     static let activeAlpha: CGFloat = 1
     static let deactivatedAlpha: CGFloat = 0.5
+    fileprivate static let noContentViewTag = 9987
     
     
     var recursiveSubviews: [UIView] {
         var subviews = self.subviews.compactMap { $0 }
         subviews.forEach { subviews.append(contentsOf: $0.recursiveSubviews) }
         return subviews
+    }
+    
+    
+    func showMessageWithNoContentAvailable(message: String) {
+        guard viewWithTag(UIView.noContentViewTag) == nil else { return }
+        
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.tag = UIView.noContentViewTag
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 25.ifIpad(28))
+        label.textColor = AFColors.headerText.withAlphaComponent(0.5)
+        label.text = message
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        
+        view.addSubview(label)
+        addSubview(view)
+        
+        let constraints = [
+            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: trailingAnchor),
+            view.topAnchor.constraint(equalTo: topAnchor),
+            view.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    
+    func hideNoContentMessage() {
+        viewWithTag(UIView.noContentViewTag)?.removeFromSuperview()
     }
     
     
