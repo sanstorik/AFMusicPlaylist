@@ -10,6 +10,8 @@ enum OperationResult {
 
 
 class CDUtility {
+    static let shared = CDUtility()
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "AFMusicPlaylist")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -27,12 +29,15 @@ class CDUtility {
     }
     
     
-    func fetch<T: NSManagedObject>(_ entityName: String, in context: NSManagedObjectContext) -> [T]? {
+    private init() { }
+    
+    
+    func fetch<T: NSManagedObject>(_ entityName: String, in context: NSManagedObjectContext) -> [T] {
         return fetch(entityName: entityName, context: context)
     }
     
     
-    func fetch<T: UpdatableCoreDataEntity>() -> [T]? {
+    func fetch<T: UpdatableCoreDataEntity>() -> [T] {
         return fetch(entityName: T.globalName, context: context)
     }
     
@@ -42,6 +47,13 @@ class CDUtility {
         let fetchRq = NSFetchRequest<T>(entityName: entityName)
         fetchRq.sortDescriptors = sort
         
+        return (try? context.fetch(fetchRq)) ?? []
+    }
+    
+    
+    func objectsBy<T: UpdatableCoreDataEntity>(predicate: NSPredicate) -> [T] {
+        let fetchRq = NSFetchRequest<T>(entityName: T.globalName)
+        fetchRq.predicate = predicate
         return (try? context.fetch(fetchRq)) ?? []
     }
 }

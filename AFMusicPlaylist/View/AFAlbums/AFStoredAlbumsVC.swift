@@ -4,8 +4,11 @@ import UIKit
 
 class AFStoredAlbumsVC: AFAlbumsVC {
     init() {
-        let albums = [AFAlbum(name: "First"), AFAlbum(name: "second"), AFAlbum(name: "third")]
-        super.init(albums: albums, updater: { AFStoredAlbumsUpdater(album: $0) })
+        let mapper = AFAlbumUtility()
+        let albums: [CDAlbum] = CDUtility.shared.fetch()
+        
+        super.init(albums: albums.map { mapper.transformToApiVersion(album: $0)},
+                   updater: { AFStoredAlbumsUpdater(album: $0) })
     }
     
     

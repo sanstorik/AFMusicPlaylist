@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDAlbum" representedClassName=".CDAlbum" syncable="YES">
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="largeImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="listeners" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mediumImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDSong" inverseName="album" inverseEntity="CDSong"/>
+    </entity>
+    <entity name="CDSong" representedClassName=".CDSong" syncable="YES">
+        <attribute name="artists" optional="YES" attributeType="Transformable" customClassName="."/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAlbum" inverseName="songs" inverseEntity="CDAlbum"/>
+    </entity>
+    <elements>
+        <element name="CDAlbum" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="CDSong" positionX="-36" positionY="9" width="128" height="103"/>
+    </elements>
 </model>
