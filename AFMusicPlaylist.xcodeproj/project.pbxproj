@@ -30,6 +30,14 @@
 		8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */; };
 		8995CBBA236B46AB0047C32D /* CDSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */; };
 		8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */; };
+		8995CC2C236B498F0047C32D /* SOSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC23236B498F0047C32D /* SOSearchData.swift */; };
+		8995CC2D236B498F0047C32D /* AFArtistSearchViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC24236B498F0047C32D /* AFArtistSearchViewData.swift */; };
+		8995CC2E236B498F0047C32D /* ShowableObjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC25236B498F0047C32D /* ShowableObjectSearchController.swift */; };
+		8995CC2F236B498F0047C32D /* SearchRowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC27236B498F0047C32D /* SearchRowAction.swift */; };
+		8995CC30236B498F0047C32D /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC28236B498F0047C32D /* SortCell.swift */; };
+		8995CC31236B498F0047C32D /* ShowableObjectSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC29236B498F0047C32D /* ShowableObjectSearchCell.swift */; };
+		8995CC32236B498F0047C32D /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC2A236B498F0047C32D /* ButtonCell.swift */; };
+		8995CC33236B498F0047C32D /* Array+FilteredSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC2B236B498F0047C32D /* Array+FilteredSearch.swift */; };
 		89F03D7F2369E821003E10E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D7E2369E821003E10E3 /* AppDelegate.swift */; };
 		89F03D832369E821003E10E3 /* AFAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D822369E821003E10E3 /* AFAlbumsVC.swift */; };
 		89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */; };
@@ -77,6 +85,14 @@
 		8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8995CC23236B498F0047C32D /* SOSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchData.swift; sourceTree = "<group>"; };
+		8995CC24236B498F0047C32D /* AFArtistSearchViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFArtistSearchViewData.swift; sourceTree = "<group>"; };
+		8995CC25236B498F0047C32D /* ShowableObjectSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchController.swift; sourceTree = "<group>"; };
+		8995CC27236B498F0047C32D /* SearchRowAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRowAction.swift; sourceTree = "<group>"; };
+		8995CC28236B498F0047C32D /* SortCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
+		8995CC29236B498F0047C32D /* ShowableObjectSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchCell.swift; sourceTree = "<group>"; };
+		8995CC2A236B498F0047C32D /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		8995CC2B236B498F0047C32D /* Array+FilteredSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+FilteredSearch.swift"; sourceTree = "<group>"; };
 		89F03D7B2369E821003E10E3 /* AFMusicPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMusicPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F03D7E2369E821003E10E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89F03D822369E821003E10E3 /* AFAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumsVC.swift; sourceTree = "<group>"; };
@@ -180,6 +196,45 @@
 			path = AFArtists;
 			sourceTree = "<group>";
 		};
+		8995CC20236B498F0047C32D /* ShowableObjectSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				8995CC21236B498F0047C32D /* ShowableObjectSearchDataVC */,
+				8995CC25236B498F0047C32D /* ShowableObjectSearchController.swift */,
+				8995CC26236B498F0047C32D /* CustomCells */,
+				8995CC2B236B498F0047C32D /* Array+FilteredSearch.swift */,
+			);
+			path = ShowableObjectSearchController;
+			sourceTree = "<group>";
+		};
+		8995CC21236B498F0047C32D /* ShowableObjectSearchDataVC */ = {
+			isa = PBXGroup;
+			children = (
+				8995CC22236B498F0047C32D /* SearchData */,
+			);
+			path = ShowableObjectSearchDataVC;
+			sourceTree = "<group>";
+		};
+		8995CC22236B498F0047C32D /* SearchData */ = {
+			isa = PBXGroup;
+			children = (
+				8995CC23236B498F0047C32D /* SOSearchData.swift */,
+				8995CC24236B498F0047C32D /* AFArtistSearchViewData.swift */,
+			);
+			path = SearchData;
+			sourceTree = "<group>";
+		};
+		8995CC26236B498F0047C32D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				8995CC27236B498F0047C32D /* SearchRowAction.swift */,
+				8995CC28236B498F0047C32D /* SortCell.swift */,
+				8995CC29236B498F0047C32D /* ShowableObjectSearchCell.swift */,
+				8995CC2A236B498F0047C32D /* ButtonCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		89F03D722369E821003E10E3 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +268,7 @@
 		89F03D952369E9C8003E10E3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				8995CC20236B498F0047C32D /* ShowableObjectSearchController */,
 				604A0F69236ADBAB00F61F17 /* Networking */,
 				89F03E062369F6C1003E10E3 /* CustomViews */,
 				89F03DF52369F5B0003E10E3 /* Extensions */,
@@ -229,7 +285,6 @@
 				8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */,
 				8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */,
 				8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */,
-				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
 				89F03D992369EADB003E10E3 /* UpdatableEntity.swift */,
 				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
 			);
@@ -271,6 +326,7 @@
 		89F03E072369FE5F003E10E3 /* SystemFiles */ = {
 			isa = PBXGroup;
 			children = (
+				89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */,
 				89F03D8A2369E823003E10E3 /* Assets.xcassets */,
 				89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */,
 				89F03D8F2369E823003E10E3 /* Info.plist */,
@@ -443,11 +499,15 @@
 				604A0F77236B0A7D00F61F17 /* AFArtistSearch.swift in Sources */,
 				89F03E0D236A12D8003E10E3 /* AFArtist.swift in Sources */,
 				8972DB65236A27CF00D787EA /* AFColors.swift in Sources */,
+				8995CC2E236B498F0047C32D /* ShowableObjectSearchController.swift in Sources */,
+				8995CC31236B498F0047C32D /* ShowableObjectSearchCell.swift in Sources */,
+				8995CC33236B498F0047C32D /* Array+FilteredSearch.swift in Sources */,
 				89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */,
 				8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */,
 				89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */,
 				604A0F57236AC48C00F61F17 /* AFAlbumViewUpdater.swift in Sources */,
 				89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */,
+				8995CC32236B498F0047C32D /* ButtonCell.swift in Sources */,
 				89F03E052369F6BE003E10E3 /* ButtonActionView.swift in Sources */,
 				604A0F6F236ADE9C00F61F17 /* ObservableEvent.swift in Sources */,
 				604A0F81236B1A8000F61F17 /* AFAlbumEntryCell.swift in Sources */,
@@ -457,12 +517,16 @@
 				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
 				604A0F7A236B11C100F61F17 /* AFDynamicTableViewVC.swift in Sources */,
 				89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */,
+				8995CC2C236B498F0047C32D /* SOSearchData.swift in Sources */,
 				604A0F6B236ADBD400F61F17 /* APIRequest.swift in Sources */,
 				604A0F73236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift in Sources */,
+				8995CC2F236B498F0047C32D /* SearchRowAction.swift in Sources */,
 				604A0F7F236B130100F61F17 /* AFButtonCell.swift in Sources */,
 				8995CBB8236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift in Sources */,
 				8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */,
+				8995CC30236B498F0047C32D /* SortCell.swift in Sources */,
 				604A0F7D236B11F300F61F17 /* AFTemplateCell.swift in Sources */,
+				8995CC2D236B498F0047C32D /* AFArtistSearchViewData.swift in Sources */,
 				604A0F71236AE6D800F61F17 /* APIActionProvider.swift in Sources */,
 				89F03E09236A1281003E10E3 /* ProgressLoader.swift in Sources */,
 			);

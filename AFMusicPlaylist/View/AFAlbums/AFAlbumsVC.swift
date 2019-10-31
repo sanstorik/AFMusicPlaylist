@@ -3,6 +3,8 @@ import UIKit
 
 
 class AFAlbumsVC: CommonViewController {
+    private lazy var searchData = AFArtistSearchDataVC(searchNavigationDelegate: self)
+    private lazy var search = ShowableObjectSearchController(searchResultsController: searchData, presenter: self)
     private lazy var collectionView = spawnCollectionView()
     private var albums = [AFAlbum]()
     private let updater: (AFAlbum) -> AFAlbumViewUpdater
@@ -36,6 +38,25 @@ class AFAlbumsVC: CommonViewController {
         setupBackground(AFColors.background)
         setupViews()
         additionalSetup()
+        showIcons()
+    }
+    
+    
+    @objc private func startSearch() {
+        search.showSearchBar()
+    }
+}
+
+
+extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler {
+    func pushViewController(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func showIcons() {
+        let searchIcon = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(startSearch))
+        navigationItem.rightBarButtonItem = searchIcon
     }
 }
 

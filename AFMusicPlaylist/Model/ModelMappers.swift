@@ -7,7 +7,7 @@ class AFAlbumUtility {
     func transformToApiVersion(album: CDAlbum) -> AFAlbum {
         let songUtility = AFSongUtility()
         let songs = album.songs.map { songUtility.transformToApiVersion(song: $0) }
-        let artist = AFArtist(name: album.artist, images: [])
+        let artist = AFArtist(name: album.artist, images: [], listeners: album.listeners)
         let album = AFAlbum(name: album.name, artist: artist, listeners: album.listeners, releaseDate: album.releaseDate,
                 songs: songs, images: [AFImage(url: album.largeImageUrl, size: "large")])
         

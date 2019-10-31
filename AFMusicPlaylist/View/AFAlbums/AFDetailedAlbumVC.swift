@@ -61,7 +61,7 @@ class AFDetailedAlbumVC: AFDynamicCellTableViewVC {
     
     private func setupDefaultRows() {
         let templateSongs = [AFSong(duration: 0, name: nil, artist: nil)]
-        let templateAlbum = AFAlbum(name: name, artist: AFArtist(name: artist, images: []),
+        let templateAlbum = AFAlbum(name: name, artist: AFArtist(name: artist, images: [], listeners: 0),
                                listeners: 0, releaseDate: nil, songs: templateSongs,
                                images: [AFImage(url: defaultImageUrl, size: "large")])
         
