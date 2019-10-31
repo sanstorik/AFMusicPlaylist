@@ -34,7 +34,12 @@ class APIActionProvider<T: APIAction> {
         var url = action.baseUrl + action.path
         addGetParamsFor(url: &url, action: action)
         
-        var request = URLRequest(url: URL(string: url)!)
+        guard let apiURL = URL(string: url) else {
+            completionHandler(.failure)
+            return
+        }
+        
+        var request = URLRequest(url: apiURL)
         request.httpMethod = action.method.string
         request.allHTTPHeaderFields = headers
         
