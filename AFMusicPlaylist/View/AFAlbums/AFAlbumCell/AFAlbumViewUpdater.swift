@@ -46,3 +46,42 @@ struct AFStoredAlbumsUpdater: AFAlbumViewUpdater {
         self.album = album
     }
 }
+
+
+struct AFArtistsAlbumsUpdater: AFAlbumViewUpdater {
+    var imageUrl: String? {
+        return album.largeImage?.url
+    }
+    
+    
+    var topText: String? {
+        if let name = album.name, !name.isEmpty {
+            return name
+        }
+        
+        return "No name"
+    }
+    
+    
+    var bottomText: String? {
+        return "\(album.listeners) \(peoplePluralForm(count: album.listeners)) to it with you."
+    }
+    
+    
+    let album: AFAlbum
+    
+    
+    init(album: AFAlbum) {
+        self.album = album
+    }
+    
+    
+    func peoplePluralForm(count: Int64) -> String {
+        switch count {
+        case 1:
+            return "person listens"
+        default:
+            return "people listen"
+        }
+    }
+}

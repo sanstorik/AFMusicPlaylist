@@ -72,15 +72,32 @@ final class AFArtistSearchHandler: SearchableObjectHandler<AFArtist> {
 
     
     override func selectedRow(with object: AFArtist) {
+        guard let artistName = object.name else { return }
         
+        let albumsVC = AFAlbumsVC(isSearchAvailable: false, updater: { AFArtistsAlbumsUpdater(album: $0) }) { reloadableList in
+            self.provider.request(action: .artistAlbums(artist: artistName)) { response in
+                switch response {
+                case .success(_, let data):
+                    if let topAlbums = try? JSONDecoder().decode(AFTopAlbums.self, from: data) {
+                        let albums = topAlbums.topalbums.album
+                        reloadableList.updateSources(with: albums)
+                    } else {
+                        reloadableList.updateSources(with: [])
+                    }
+                default:
+                    reloadableList.updateSources(with: [])
+                }
+            }
+        }
+        
+        searchNavigationDelegate?.pushViewController(albumsVC)
     }
     
     
     override func loadItems(at page: Int, with limits: Int, filteredBy text: String?, didLoad: @escaping ([AFArtist]) -> Void) {
         provider.request(action: .artistSearch(artist: text ?? "", limit: limits, page: page)) { response in
             switch response {
-            case .success(let json, let data):
-                print(json)
+            case .success(_, let data):
                 if let artistsResult = try? JSONDecoder().decode(AFArtistSearch.self, from: data) {
                     didLoad(artistsResult.results.artistmatches.artists)
                 } else {

@@ -2,32 +2,40 @@
 import UIKit
 
 
+protocol AFReloadableAlbumList {
+    func updateSources(with albums: [AFAlbum])
+}
+
 class AFAlbumsVC: CommonViewController {
     private lazy var searchData = AFArtistSearchDataVC(searchNavigationDelegate: self)
     private lazy var search = ShowableObjectSearchController(searchResultsController: searchData, presenter: self)
     private lazy var collectionView = spawnCollectionView()
     private var albums = [AFAlbum]()
     private let updater: (AFAlbum) -> AFAlbumViewUpdater
-    private let fetcher: () -> [AFAlbum]
+    private let fetcher: (AFReloadableAlbumList) -> Void
+    private let isSearchAvailable: Bool
     
     
-    init(fetcher: @escaping () -> [AFAlbum], updater: @escaping (AFAlbum) -> AFAlbumViewUpdater) {
+    init(isSearchAvailable: Bool = true, updater: @escaping (AFAlbum) -> AFAlbumViewUpdater,
+         fetcher: @escaping (AFReloadableAlbumList) -> Void) {
         self.fetcher = fetcher
         self.updater = updater
+        self.isSearchAvailable = isSearchAvailable
         super.init(nibName: nil, bundle: nil)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.albums = fetcher()
+        fetcher(self)
         collectionView.reloadData()
     }
     
     
     required init?(coder: NSCoder) {
         updater = { AFStoredAlbumsUpdater(album: $0) }
-        fetcher = { [] }
+        fetcher = { _ in }
+        isSearchAvailable = true
         super.init(coder: coder)
     }
     
@@ -48,24 +56,33 @@ class AFAlbumsVC: CommonViewController {
 }
 
 
-extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler {
+extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler, AFReloadableAlbumList {
+    func updateSources(with albums: [AFAlbum]) {
+        self.albums = albums
+        self.collectionView.reloadData()
+    }
+    
     func pushViewController(_ vc: UIViewController) {
         navigationController?.pushViewController(vc, animated: true)
     }
     
     
     func showIcons() {
-        let searchIcon = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(startSearch))
-        navigationItem.rightBarButtonItem = searchIcon
-        navigationItem.title = "Albums"
+        if isSearchAvailable {
+            let searchIcon = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(startSearch))
+            navigationItem.rightBarButtonItem = searchIcon
+            navigationItem.title = "Albums"
+        }
     }
     
     
     func hideIcons() {
-        navigationItem.title = "Artists"
-        navigationItem.leftBarButtonItems = nil
-        navigationItem.rightBarButtonItems = nil
-        navigationItem.hidesBackButton = true
+        if isSearchAvailable {
+            navigationItem.title = "Artists"
+            navigationItem.leftBarButtonItems = nil
+            navigationItem.rightBarButtonItems = nil
+            navigationItem.hidesBackButton = true
+        }
     }
 }
 
@@ -87,8 +104,7 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedAlbum = albums[indexPath.row]
         if let name = selectedAlbum.name, let artist = selectedAlbum.artist?.name ?? selectedAlbum.artistName {
-            let detailedVC = AFDetailedAlbumVC(name: "Purpose", artist: "Justin Bieber",
-                                               imageUrl: selectedAlbum.largeImage?.url)
+            let detailedVC = AFDetailedAlbumVC(name: name, artist: artist, imageUrl: selectedAlbum.largeImage?.url)
             navigationController?.pushViewController(detailedVC, animated: true)
         }
     }

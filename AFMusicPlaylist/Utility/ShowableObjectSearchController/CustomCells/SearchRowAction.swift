@@ -86,10 +86,13 @@ final class SearchSortAction<T>: UpdatableSearchRowAction {
 
 protocol SearchableDataSection: class {
     associatedtype SearchableObject
+    var requiresPagination: Bool { get }
+    
     func filterByStringAsync(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>,
                              didLoadItems: @escaping () -> Void)
-    func requiresPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void)
+    func performPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void)
     func sortObjects(_ text: String?, filterCollector: SearchFilterCollector<SearchableObject>)
+    func isReadyToPerformPagination(displaying row: Int) -> Bool
 }
 
 
@@ -118,13 +121,15 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
     override var headerIdentifier: String { return dataHeaderIdentifier ?? "" }
     override var useHeader: Bool { return dataHeaderIdentifier != nil }
     
+    var requiresPagination: Bool { return lastPaginationBatch >= pageLimit }
     var searchableObjectDelegate: SearchableObjectHandler<T>?
     private(set) var resultingList = [T]()
     
     private let dataRowIdentifier: String
     private let dataHeaderIdentifier: String?
-    private var currentPage = 1
     private let pageLimit = 30
+    private var currentPage = 1
+    private var lastPaginationBatch = 30
     
     
     init(rowIdentifier: String, headerIdentifier: String?, rowAction: SearchRowAction) {
@@ -154,12 +159,19 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
     }
     
     
-    func requiresPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void) {
+    func performPagination(_ text: String?, _ didFetchItems: @escaping ([Int]) -> Void) {
         currentPage += 1
         searchableObjectDelegate?.loadItems(at: currentPage, with: pageLimit, filteredBy: text) { [currentPage] in
             self.resultingList += $0
-            didFetchItems(self.createIndeciesForPage(currentPage))
+            let insertedRows = self.createIndeciesForPage(currentPage, inserted: $0.count)
+            didFetchItems(insertedRows)
+            self.lastPaginationBatch = $0.count
         }
+    }
+    
+    
+    func isReadyToPerformPagination(displaying row: Int) -> Bool {
+        return row > (currentPage * pageLimit) - pageLimit / 2
     }
     
     
@@ -168,11 +180,11 @@ final class SearchDataSection<T>: SearchTemplateSection<T>, SearchableDataSectio
     }
     
     
-    private func createIndeciesForPage(_ page: Int) -> [Int] {
-        let offset = pageLimit * currentPage
+    private func createIndeciesForPage(_ page: Int, inserted count: Int) -> [Int] {
+        let offset = pageLimit * (page - 1)
         var indecies = [Int]()
         
-        for i in offset..<offset + pageLimit {
+        for i in offset..<offset + count {
             indecies.append(i)
         }
         

@@ -4,13 +4,13 @@ import UIKit
 
 class AFStoredAlbumsVC: AFAlbumsVC {
     init() {
-        let fetcher: () -> [AFAlbum] = {
+        let fetcher: (AFReloadableAlbumList) -> Void = { reloadableList in
             let mapper = AFAlbumUtility()
             let albums: [CDAlbum] = CDUtility.shared.fetch()
-            return albums.map { mapper.transformToApiVersion(album: $0) }
+            reloadableList.updateSources(with: albums.map { mapper.transformToApiVersion(album: $0) })
         }
         
-        super.init(fetcher: fetcher, updater: { AFStoredAlbumsUpdater(album: $0) })
+        super.init(updater: { AFStoredAlbumsUpdater(album: $0) }, fetcher: fetcher)
     }
     
     

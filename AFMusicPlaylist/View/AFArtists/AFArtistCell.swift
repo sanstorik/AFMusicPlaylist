@@ -83,6 +83,8 @@ extension AFArtistCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 0.1
+        iv.layer.masksToBounds = true
+        iv.clipsToBounds = true
         return iv
     }
     

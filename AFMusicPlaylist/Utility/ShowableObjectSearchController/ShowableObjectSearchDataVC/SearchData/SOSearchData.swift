@@ -9,7 +9,9 @@ protocol SearchNavigationDelegate: class {
 
 class SOSearchData<T>: CommonViewController, UITableViewDelegate, UITableViewDataSource,
 UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
+    var searchBarTriggerDelay: TimeInterval { return 0.6 }
     weak var searchTextDelegate: SearchableTextDelegate?
+    
     private(set) lazy var searchTableView = createSearchTableView()
     private(set) var sections = [SearchTemplateSection<T>]()
     private weak var searchNavigationDelegate: SearchNavigationDelegate?
@@ -26,7 +28,7 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //updateAllDataSection(filterText: searchTextDelegate?.searchText)
+        updateAllDataSection(filterText: searchTextDelegate?.searchText)
     }
     
     
@@ -129,6 +131,14 @@ UIGestureRecognizerDelegate, ShowableObjectSearchDelegate {
         
         if let dataRowAction = section.rowAction as? SearchDataRowAction<T>,
             let dataSection = sectionToSearchDataSection(section) {
+            /* Pagination */
+            if dataSection.isReadyToPerformPagination(displaying: indexPath.row) {
+                dataSection.performPagination(searchTextDelegate?.searchText) { fetchedIndecies in
+                    let rows = fetchedIndecies.map { IndexPath(row: $0, section: indexPath.section) }
+                    self.searchTableView.insertRows(at: rows, with: .none)
+                }
+            }
+            
             dataRowAction.setupCellCallback!(cell, dataSection.resultingList[indexPath.row])
             return cell
         }

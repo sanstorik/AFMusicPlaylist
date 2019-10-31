@@ -2,6 +2,7 @@
 import UIKit
 
 protocol ShowableObjectSearchDelegate: class {
+    var searchBarTriggerDelay: TimeInterval { get }
     var searchTextDelegate: SearchableTextDelegate? { get set }
     func didStopSearch()
     func searchTextDidChange(_ text: String)
@@ -48,6 +49,7 @@ final class ShowableObjectSearchController: NSObject, SearchableTextDelegate {
         }
     }
     
+    private var _searchBarLastUpdateTime = Date()
     private var _search: SearchOutputDataList?
     private weak var _presenter: SearchPresenter?
     private let _searchBar = UISearchBar()
@@ -170,7 +172,14 @@ extension ShowableObjectSearchController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let text = searchBar.text {
-            _search?.searchTextDidChange(text)
+            _searchBarLastUpdateTime = Date()
+            
+            let triggerDelay = min(_search?.searchBarTriggerDelay ?? 0.5, 0.5)
+            DispatchQueue.main.asyncAfter(deadline: .now() + triggerDelay) {
+                if Date().timeIntervalSince(self._searchBarLastUpdateTime) > triggerDelay {
+                    self._search?.searchTextDidChange(text)
+                }
+            }
         }
     }
 }

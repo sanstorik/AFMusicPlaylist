@@ -36,7 +36,8 @@ class AFAlbumEntryCell: AFTemplateCell {
         artistLabel.text = entryData.album.artist?.name ?? entryData.album.artistName
         
         let fans = entryData.album.listeners
-        listenersCounter.text = "\(fans) \(peoplePluralForm(count: fans)) to it with you."
+        let updater = AFArtistsAlbumsUpdater(album: entryData.album)
+        listenersCounter.text = "\(fans) \(updater.peoplePluralForm(count: fans)) to it with you."
     }
     
     
@@ -66,16 +67,6 @@ class AFAlbumEntryCell: AFTemplateCell {
         ]
         
         NSLayoutConstraint.activate(constraints)
-    }
-    
-    
-    private func peoplePluralForm(count: Int64) -> String {
-        switch count {
-        case 1:
-            return "person listens"
-        default:
-            return "people listen"
-        }
     }
 }
 
