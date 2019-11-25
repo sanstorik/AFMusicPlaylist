@@ -3,6 +3,7 @@ import UIKit
 
 
 protocol AFReloadableAlbumList {
+    var view: UIView! { get }
     func updateSources(with albums: [AFAlbum])
 }
 

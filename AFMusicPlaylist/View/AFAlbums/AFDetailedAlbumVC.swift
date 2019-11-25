@@ -38,7 +38,11 @@ class AFDetailedAlbumVC: AFDynamicCellTableViewVC {
         super.viewDidLoad()
         setupDefaultRows()
         
-        provider.request(action: .albumDetailed(name: name, artist: artist)) { result in
+        view.showLoader()
+        provider.request(action: .albumDetailed(name: name, artist: artist)) { [weak self] result in
+            guard let `self` = self else { return }
+            self.view.removeLoader()
+            
             switch result {
             case .success(_, let data):
                 if let detailedAlbum = try? JSONDecoder().decode(AFAlbumDetailed.self, from: data),

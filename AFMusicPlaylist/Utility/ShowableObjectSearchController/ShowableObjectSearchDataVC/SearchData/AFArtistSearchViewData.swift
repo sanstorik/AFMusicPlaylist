@@ -75,7 +75,10 @@ final class AFArtistSearchHandler: SearchableObjectHandler<AFArtist> {
         guard let artistName = object.name else { return }
         
         let albumsVC = AFAlbumsVC(isSearchAvailable: false, updater: { AFArtistsAlbumsUpdater(album: $0) }) { reloadableList in
+            reloadableList.view.showLoader()
             self.provider.request(action: .artistAlbums(artist: artistName)) { response in
+                reloadableList.view.removeLoader()
+                
                 switch response {
                 case .success(_, let data):
                     if let topAlbums = try? JSONDecoder().decode(AFTopAlbums.self, from: data) {
