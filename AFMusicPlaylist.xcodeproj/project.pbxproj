@@ -26,10 +26,8 @@
 		604A0F7F236B130100F61F17 /* AFButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F7E236B130100F61F17 /* AFButtonCell.swift */; };
 		604A0F81236B1A8000F61F17 /* AFAlbumEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A0F80236B1A8000F61F17 /* AFAlbumEntryCell.swift */; };
 		8972DB65236A27CF00D787EA /* AFColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8972DB64236A27CF00D787EA /* AFColors.swift */; };
-		8995CBB8236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */; };
 		8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */; };
 		8995CBBA236B46AB0047C32D /* CDSong+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */; };
-		8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */; };
 		8995CC2C236B498F0047C32D /* SOSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC23236B498F0047C32D /* SOSearchData.swift */; };
 		8995CC2D236B498F0047C32D /* AFArtistSearchViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC24236B498F0047C32D /* AFArtistSearchViewData.swift */; };
 		8995CC2E236B498F0047C32D /* ShowableObjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC25236B498F0047C32D /* ShowableObjectSearchController.swift */; };
@@ -43,7 +41,7 @@
 		89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D872369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld */; };
 		89F03D8B2369E823003E10E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F03D8A2369E823003E10E3 /* Assets.xcassets */; };
 		89F03D8E2369E823003E10E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F03D8C2369E823003E10E3 /* LaunchScreen.storyboard */; };
-		89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D962369E9D4003E10E3 /* CDUtility.swift */; };
+		89F03D972369E9D4003E10E3 /* DBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D962369E9D4003E10E3 /* DBUtility.swift */; };
 		89F03D9A2369EADB003E10E3 /* UpdatableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03D992369EADB003E10E3 /* UpdatableEntity.swift */; };
 		89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DE82369EE99003E10E3 /* NavigationBar.swift */; };
 		89F03DEB2369EE99003E10E3 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F03DE92369EE99003E10E3 /* CommonViewController.swift */; };
@@ -81,10 +79,8 @@
 		604A0F80236B1A8000F61F17 /* AFAlbumEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFAlbumEntryCell.swift; sourceTree = "<group>"; };
 		6DF6EC95DCF9276DE25C09A1 /* Pods_AFMusicPlaylist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFMusicPlaylist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8972DB64236A27CF00D787EA /* AFColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFColors.swift; sourceTree = "<group>"; };
-		8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAlbum+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDSong+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8995CC23236B498F0047C32D /* SOSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSearchData.swift; sourceTree = "<group>"; };
 		8995CC24236B498F0047C32D /* AFArtistSearchViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFArtistSearchViewData.swift; sourceTree = "<group>"; };
 		8995CC25236B498F0047C32D /* ShowableObjectSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowableObjectSearchController.swift; sourceTree = "<group>"; };
@@ -100,7 +96,7 @@
 		89F03D8A2369E823003E10E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89F03D8D2369E823003E10E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89F03D8F2369E823003E10E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89F03D962369E9D4003E10E3 /* CDUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUtility.swift; sourceTree = "<group>"; };
+		89F03D962369E9D4003E10E3 /* DBUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtility.swift; sourceTree = "<group>"; };
 		89F03D992369EADB003E10E3 /* UpdatableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableEntity.swift; sourceTree = "<group>"; };
 		89F03DE82369EE99003E10E3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		89F03DE92369EE99003E10E3 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
@@ -282,11 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				8995CBB5236B46AB0047C32D /* CDAlbum+CoreDataClass.swift */,
-				8995CBB4236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift */,
 				8995CBB6236B46AB0047C32D /* CDSong+CoreDataClass.swift */,
-				8995CBB7236B46AB0047C32D /* CDSong+CoreDataProperties.swift */,
 				89F03D992369EADB003E10E3 /* UpdatableEntity.swift */,
-				89F03D962369E9D4003E10E3 /* CDUtility.swift */,
+				89F03D962369E9D4003E10E3 /* DBUtility.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -503,7 +497,6 @@
 				8995CC31236B498F0047C32D /* ShowableObjectSearchCell.swift in Sources */,
 				8995CC33236B498F0047C32D /* Array+FilteredSearch.swift in Sources */,
 				89F03D892369E821003E10E3 /* AFMusicPlaylist.xcdatamodeld in Sources */,
-				8995CBBB236B46AB0047C32D /* CDSong+CoreDataProperties.swift in Sources */,
 				89F03E042369F6BE003E10E3 /* LabeledSwitch.swift in Sources */,
 				604A0F57236AC48C00F61F17 /* AFAlbumViewUpdater.swift in Sources */,
 				89F03DF92369F5C4003E10E3 /* StringExtension.swift in Sources */,
@@ -516,13 +509,12 @@
 				89F03E11236A15F2003E10E3 /* AFArtistCell.swift in Sources */,
 				89F03DEA2369EE99003E10E3 /* NavigationBar.swift in Sources */,
 				604A0F7A236B11C100F61F17 /* AFDynamicTableViewVC.swift in Sources */,
-				89F03D972369E9D4003E10E3 /* CDUtility.swift in Sources */,
+				89F03D972369E9D4003E10E3 /* DBUtility.swift in Sources */,
 				8995CC2C236B498F0047C32D /* SOSearchData.swift in Sources */,
 				604A0F6B236ADBD400F61F17 /* APIRequest.swift in Sources */,
 				604A0F73236AEAB900F61F17 /* AFMusicPlaylistAPIAction.swift in Sources */,
 				8995CC2F236B498F0047C32D /* SearchRowAction.swift in Sources */,
 				604A0F7F236B130100F61F17 /* AFButtonCell.swift in Sources */,
-				8995CBB8236B46AB0047C32D /* CDAlbum+CoreDataProperties.swift in Sources */,
 				8995CBB9236B46AB0047C32D /* CDAlbum+CoreDataClass.swift in Sources */,
 				8995CC30236B498F0047C32D /* SortCell.swift in Sources */,
 				604A0F7D236B11F300F61F17 /* AFTemplateCell.swift in Sources */,

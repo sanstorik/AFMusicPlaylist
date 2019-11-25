@@ -4,7 +4,8 @@
 target 'AFMusicPlaylist' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  
+
+  pod 'RealmSwift'
   pod 'Alamofire'
   pod 'AlamofireImage'
   # Pods for AFMusicPlaylist

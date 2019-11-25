@@ -1,8 +1,8 @@
 
 
-import CoreData
+import RealmSwift
 
-typealias UpdatableCoreDataEntity = UpdatableEntity & NSManagedObject
+typealias UpdatableDatabaseEntity = UpdatableEntity & Object
 
 protocol UpdatableEntity: class {
     static var globalName: String { get }

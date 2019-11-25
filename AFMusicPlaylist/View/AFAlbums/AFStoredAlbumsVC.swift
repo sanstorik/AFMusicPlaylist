@@ -6,7 +6,7 @@ class AFStoredAlbumsVC: AFAlbumsVC {
     init() {
         let fetcher: (AFReloadableAlbumList) -> Void = { reloadableList in
             let mapper = AFAlbumUtility()
-            let albums: [CDAlbum] = CDUtility.shared.fetch()
+            let albums: [CDAlbum] = DBUtility.shared.fetchObjects()
             reloadableList.updateSources(with: albums.map { mapper.transformToApiVersion(album: $0) })
         }
         
