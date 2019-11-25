@@ -1,6 +1,0 @@
-framework module Pods_AFMusicPlaylist {
-  umbrella header "Pods-AFMusicPlaylist-umbrella.h"
-
-  export *
-  module * { export * }
-}
