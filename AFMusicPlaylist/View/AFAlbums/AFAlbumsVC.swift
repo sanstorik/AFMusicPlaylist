@@ -98,11 +98,7 @@ extension AFAlbumsVC: SearchNavigationDelegate, NavigationBarIconsHandler, AFRel
 
 extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AFAlbumCell.identifier, for: indexPath)
-            as? AFAlbumCell else {
-            fatalError()
-        }
-        
+        let cell: AFAlbumCell = collectionView.smartDequeue(for: indexPath)
         cell.albumUpdater = updater(albums[indexPath.row])
         cell.selectedBackgroundView = UIView()
         cell.selectedBackgroundView?.backgroundColor = .clear
@@ -181,7 +177,30 @@ extension AFAlbumsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         cv.delegate = self
         cv.contentInset = UIEdgeInsets(top: 15, left: 25, bottom: 0, right: 25)
         cv.insetsLayoutMarginsFromSafeArea = true
-        cv.register(AFAlbumCell.self, forCellWithReuseIdentifier: AFAlbumCell.identifier)
+        cv.smartRegister(AFAlbumCell.self)
         return cv
+    }
+}
+
+
+extension UICollectionView  {
+    func smartDequeue<T: AFSmartDequeueCell & UICollectionViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
+    }
+    
+    
+    func smartRegister<T: AFSmartDequeueCell & UICollectionViewCell>(_ cell: T.Type) {
+        register(cell, forCellWithReuseIdentifier: cell.identifier)
+    }
+}
+
+protocol AFSmartDequeueCell {
+    static var identifier: String { get }
+}
+
+
+extension AFSmartDequeueCell {
+    static var identifier: String {
+        return String(describing: self)
     }
 }

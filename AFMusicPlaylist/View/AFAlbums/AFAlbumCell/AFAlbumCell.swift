@@ -3,10 +3,7 @@
 import UIKit
 
 
-class AFAlbumCell: UICollectionViewCell {
-    static let identifier = "AFAlbumCell"
-    
-    
+class AFAlbumCell: UICollectionViewCell, AFSmartDequeueCell {
     var albumUpdater: AFAlbumViewUpdater? {
         didSet {
             nameLabel.text = albumUpdater?.topText
